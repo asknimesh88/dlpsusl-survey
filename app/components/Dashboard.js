@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import BarList from "./BarList";
 import DivergeList from "./DivergeList";
 import FilterRow from "./FilterRow";
+import ThemeToggle from "./ThemeToggle";
 import { aggregate, filterByYear, years as yearsOf } from "../lib/aggregate";
 
 export default function Dashboard({ records, courseColumns }) {
@@ -30,7 +31,10 @@ export default function Dashboard({ records, courseColumns }) {
         <div className="wrap">
           <div className="masthead-top">
             <span>Curriculum review · Sabaragamuwa University of Sri Lanka</span>
-            <span>{records.length} graduates surveyed, 2022–2026</span>
+            <span className="masthead-top-right">
+              {records.length} graduates surveyed, 2022–2026
+              <ThemeToggle />
+            </span>
           </div>
           <h1>Animal Bio-Resource Technology &amp; Management, through its graduates&rsquo; eyes</h1>
           <p>
