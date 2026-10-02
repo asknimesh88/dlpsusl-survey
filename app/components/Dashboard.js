@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import BarList from "./BarList";
+import CountUp from "./CountUp";
 import DivergeList from "./DivergeList";
 import FilterRow from "./FilterRow";
 import StackedBars from "./StackedBars";
@@ -50,52 +51,56 @@ export default function Dashboard({ records, courseColumns }) {
 
   return (
     <>
-      <header className="masthead">
+      <header className="hero-band">
         <div className="wrap">
-          <div className="masthead-top">
-            <span>Curriculum review · Sabaragamuwa University of Sri Lanka</span>
-            <span className="masthead-top-right">
-              {records.length} graduates surveyed, 2022–2026
-              <ThemeToggle />
-            </span>
-          </div>
-          <h1>Animal Bio-Resource Technology &amp; Management, through its graduates&rsquo; eyes</h1>
-          <p>
-            Every response here comes from a graduate of the Animal Bio-Resource
-            specialization &mdash; Aquatic Bio-Resource responses have been set aside so
-            the curriculum committee is reading feedback on the track it actually owns.
+          <p className="hero-kicker">Graduate satisfaction survey, Sabaragamuwa University of Sri Lanka</p>
+          <h1>Animal Bio-Resource Technology &amp; Management</h1>
+          <p className="hero-lede">
+            What {records.length} graduates from 2022 to 2026 say about the degree that trained them.
+            Aquatic Bio-Resource responses are left out, so this is feedback on the track the committee owns.
           </p>
+          <div className="hero-stats">
+            <div>
+              <div className="hero-big">
+                <CountUp value={d.overallExp} decimals={2} />
+                <small>/5</small>
+              </div>
+              <div className="hero-big-label">Overall graduate experience</div>
+            </div>
+            <div className="ear-tags">
+              <div className="ear-tag">
+                <div className="ear-tag-figure">
+                  <CountUp value={d.recommendPct} />
+                  <small>%</small>
+                </div>
+                <div className="ear-tag-label">would recommend the programme</div>
+              </div>
+              <div className="ear-tag">
+                <div className="ear-tag-figure">
+                  <CountUp value={d.jobSkills} decimals={2} />
+                  <small>/5</small>
+                </div>
+                <div className="ear-tag-label">job-related skills gained</div>
+              </div>
+              <div className="ear-tag">
+                <div className="ear-tag-figure">
+                  <CountUp value={d.n} />
+                </div>
+                <div className="ear-tag-label">responses in this view</div>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
+      <div className="bar">
+        <div className="wrap bar-inner">
+          <FilterRow years={allYears} active={year} onChange={setYear} />
+          <ThemeToggle />
+        </div>
+      </div>
+
       <div className="wrap">
-        <FilterRow years={allYears} active={year} onChange={setYear} />
-
-        <section className="hero">
-          <div className="stat hero-main">
-            <span className="stat-figure">
-              {d.overallExp ?? "–"}
-              <span className="stat-unit">/5</span>
-            </span>
-            <div className="stat-label">Overall graduate experience</div>
-          </div>
-          <div className="stat">
-            <span className="stat-figure">{d.recommendPct ?? "–"}%</span>
-            <div className="stat-label">Would recommend the programme</div>
-          </div>
-          <div className="stat">
-            <span className="stat-figure">
-              {d.jobSkills ?? "–"}
-              <span className="stat-unit">/5</span>
-            </span>
-            <div className="stat-label">Job-related skills gained</div>
-          </div>
-          <div className="stat">
-            <span className="stat-figure">{d.n}</span>
-            <div className="stat-label">Responses in this view</div>
-          </div>
-        </section>
-
         <Section title="Who answered" note="Questions 1 to 4, 10 and 11: graduation year, degree class, sector and further study">
           <div className="grid-2">
             <Panel title="Graduation year">
