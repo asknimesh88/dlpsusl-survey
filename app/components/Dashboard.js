@@ -4,8 +4,40 @@ import { useMemo, useState } from "react";
 import BarList from "./BarList";
 import DivergeList from "./DivergeList";
 import FilterRow from "./FilterRow";
+import StackedBars from "./StackedBars";
 import ThemeToggle from "./ThemeToggle";
-import { aggregate, filterByYear, years as yearsOf } from "../lib/aggregate";
+import { ACTIVITY_LEVELS, TEXT_QUESTIONS, aggregate, filterByYear, years as yearsOf } from "../lib/aggregate";
+
+function Tags({ items, warn }) {
+  return (
+    <div className="tag-row">
+      {items.map((f) => (
+        <span className="tag" key={f.label} style={warn ? { borderColor: "var(--clay)" } : undefined}>
+          <b>{f.value}</b> {f.label}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function Section({ title, note, children }) {
+  return (
+    <section className="section">
+      <div className="section-head">
+        <h2>{title}</h2>
+        {note && <span className="section-note">{note}</span>}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+const Panel = ({ title, children }) => (
+  <div className="panel">
+    <h3>{title}</h3>
+    {children}
+  </div>
+);
 
 export default function Dashboard({ records, courseColumns }) {
   const [year, setYear] = useState("All");
@@ -14,16 +46,7 @@ export default function Dashboard({ records, courseColumns }) {
   const filtered = useMemo(() => filterByYear(records, year), [records, year]);
   const d = useMemo(() => aggregate(filtered, courseColumns), [filtered, courseColumns]);
 
-  const quotes = useMemo(() => {
-    const s = d.strengthQuotes.slice(0, 4).map((q) => ({ q, kind: "Key strength", weak: false }));
-    const w = d.weaknessQuotes.slice(0, 4).map((q) => ({ q, kind: "Key weakness", weak: true }));
-    const out = [];
-    for (let i = 0; i < Math.max(s.length, w.length); i++) {
-      if (s[i]) out.push(s[i]);
-      if (w[i]) out.push(w[i]);
-    }
-    return out.slice(0, 8);
-  }, [d]);
+  const tooShort = d.trainingDuration.find((t) => t.label === "Too short")?.value ?? 0;
 
   return (
     <>
@@ -62,10 +85,10 @@ export default function Dashboard({ records, courseColumns }) {
           </div>
           <div className="stat">
             <span className="stat-figure">
-              {d.careerPrep ?? "–"}
+              {d.jobSkills ?? "–"}
               <span className="stat-unit">/5</span>
             </span>
-            <div className="stat-label">Felt prepared for their career</div>
+            <div className="stat-label">Job-related skills gained</div>
           </div>
           <div className="stat">
             <span className="stat-figure">{d.n}</span>
@@ -73,174 +96,169 @@ export default function Dashboard({ records, courseColumns }) {
           </div>
         </section>
 
-        {/* Cohort */}
-        <section className="section">
-          <div className="section-head">
-            <h2>Who answered</h2>
-            <span className="section-note">Graduation year, degree class and where they landed</span>
-          </div>
+        <Section title="Who answered" note="Questions 1 to 4, 10 and 11: graduation year, degree class, sector and further study">
           <div className="grid-2">
-            <div className="panel">
-              <h3>Graduation year</h3>
+            <Panel title="Graduation year">
               <BarList items={d.gradYear} total={d.n} color="var(--series-1)" />
-            </div>
-            <div className="panel">
-              <h3>Final classification</h3>
+            </Panel>
+            <Panel title="Final classification">
               <BarList items={d.finalResult} total={d.n} color="var(--series-3)" />
-            </div>
+            </Panel>
           </div>
           <div className="grid-2" style={{ marginTop: 32 }}>
-            <div className="panel">
-              <h3>Employment sector</h3>
+            <Panel title="Current employment sector">
               <BarList items={d.sector} total={d.n} color="var(--series-2)" />
-            </div>
-            <div className="panel">
-              <h3>Field of expertise</h3>
-              <div className="tag-row">
-                {d.fieldExpertise.map((f) => (
-                  <span className="tag" key={f.label}>
-                    <b>{f.value}</b> {f.label}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </Panel>
+            <Panel title="Field of expertise">
+              <Tags items={d.fieldExpertise} />
+            </Panel>
           </div>
-        </section>
+          <div className="grid-2" style={{ marginTop: 32 }}>
+            <Panel title="Started postgraduate or professional studies?">
+              <BarList items={d.postgrad} total={d.n} color="var(--series-7)" />
+            </Panel>
+            <Panel title="Highest academic qualification">
+              <BarList items={d.qualification} total={d.n} color="var(--series-5)" />
+            </Panel>
+          </div>
+        </Section>
 
-        {/* Curriculum fit */}
-        <section className="section">
-          <div className="section-head">
-            <h2>Did the curriculum do its job?</h2>
-            <span className="section-note">Self-rated 1 (not well) to 5 (extremely well)</span>
-          </div>
-          <div className="panel">
-            <BarList items={d.curriculumFit.map((c) => ({ label: c.label, value: c.value ?? 0 }))} color="var(--series-1)" max={5} unit=" / 5" />
-          </div>
-        </section>
-
-        {/* Course ratings */}
-        <section className="section">
-          <div className="section-head">
-            <h2>Course by course</h2>
-            <span className="section-note">Average rating, centred on the scale midpoint (3)</span>
-          </div>
+        <Section title="Where it leads" note="Questions 5 to 9: roles, employers, time to first job and fit with the degree">
           <div className="grid-2">
-            <div className="panel">
-              <h3>Rated lowest</h3>
-              <DivergeList items={d.lowestCourses} />
-            </div>
-            <div className="panel">
-              <h3>Rated highest</h3>
-              <DivergeList items={d.highestCourses} />
-            </div>
+            <Panel title="How closely their job matches the degree">
+              <BarList items={d.jobRelatedness} total={d.n} color="var(--series-7)" />
+            </Panel>
+            <Panel title="Wait from graduation to first job">
+              <BarList items={d.waitingPeriod} total={d.n} color="var(--series-5)" />
+            </Panel>
+          </div>
+          <div className="grid-2" style={{ marginTop: 32 }}>
+            <Panel title="Time in employment so far">
+              <BarList items={d.empDuration} total={d.n} color="var(--series-3)" />
+            </Panel>
+            <Panel title="Current roles">
+              <Tags items={d.roles} />
+            </Panel>
+          </div>
+          <div className="grid-2" style={{ marginTop: 32 }}>
+            <Panel title="Organizations graduates work for">
+              <Tags items={d.companies} />
+            </Panel>
+            <Panel title="Previous roles">
+              <Tags items={d.prevRoles} />
+            </Panel>
+          </div>
+          <p className="sub-note">Roles and organizations are listed separately, so no role is tied to a particular employer.</p>
+        </Section>
+
+        <Section title="Did the curriculum do its job?" note="Questions 13, 26 to 28, 30, 38 and 41 to 42. Ratings run 1 to 5">
+          <Panel title="Average rating (1 = not well, 5 = extremely well)">
+            <BarList items={d.curriculumFit} color="var(--series-1)" max={5} unit=" / 5" />
+          </Panel>
+          <div className="grid-2" style={{ marginTop: 32 }}>
+            <Panel title="Were expectations met?">
+              <BarList items={d.expectationsMet} total={d.n} color="var(--series-6)" />
+            </Panel>
+            <Panel title="Would they recommend it?">
+              <BarList items={d.recommend} total={d.n} color="var(--series-3)" />
+            </Panel>
+          </div>
+          <div className="grid-2" style={{ marginTop: 32 }}>
+            <Panel title="Compared to similar programmes">
+              <BarList items={d.comparedSimilar} total={d.n} color="var(--series-6)" />
+            </Panel>
+            <Panel title="Any subjects outdated or less useful?">
+              <BarList items={d.outdated} total={d.n} color="var(--series-4)" />
+            </Panel>
+          </div>
+        </Section>
+
+        <Section title="Course by course" note={`Questions 13 to 15: all ${d.coreCourses.length + d.compulsoryCourses.length + d.electiveCourses.length} courses, average rating, centred on the scale midpoint (3)`}>
+          <div className="grid-2">
+            <Panel title={`Core courses (${d.coreCourses.length})`}>
+              <DivergeList items={d.coreCourses} />
+            </Panel>
+            <Panel title={`Elective specialization (${d.electiveCourses.length})`}>
+              <DivergeList items={d.electiveCourses} />
+            </Panel>
           </div>
           <div className="panel" style={{ marginTop: 32 }}>
-            <h3>Average by course group</h3>
-            <BarList
-              items={d.courseByCategory.map((c) => ({ label: c.label, value: c.value ?? 0 }))}
-              color="var(--series-6)"
-              max={5}
-              unit=" / 5"
-            />
-          </div>
-        </section>
-
-        {/* Industrial training & evaluation */}
-        <section className="section">
-          <div className="section-head">
-            <h2>Industrial training &amp; assessment</h2>
-            <span className="section-note">
-              {d.trainingDuration.find((t) => t.label === "Too short")?.value ?? 0} of {d.n} called the training period too short
-            </span>
-          </div>
-          <div className="grid-2">
-            <div className="panel">
-              <h3>200-hour industrial training</h3>
-              <BarList items={d.trainingDuration} total={d.n} color="var(--series-4)" />
-            </div>
-            <div className="panel">
-              <h3>Was the exam system effective?</h3>
-              <BarList items={d.evalEffective} total={d.n} color="var(--series-3)" />
-            </div>
+            <h3>Compulsory specialization ({d.compulsoryCourses.length})</h3>
+            <DivergeList items={d.compulsoryCourses} />
           </div>
           <div className="grid-2" style={{ marginTop: 32 }}>
-            <div className="panel">
-              <h3>Faced strict or challenging situations</h3>
+            <Panel title="Average by course group">
+              <BarList items={d.courseByCategory} color="var(--series-6)" max={5} unit=" / 5" />
+            </Panel>
+            <Panel title="Most useful in their careers (times named)">
+              <BarList items={d.usefulCourses} color="var(--series-2)" />
+              <p className="sub-note">Counted from the courses graduates named in their own words.</p>
+            </Panel>
+          </div>
+        </Section>
+
+        <Section title="Teaching, training & assessment" note={`Questions 16 to 25 and 33 to 34. ${tooShort} of ${d.n} called the training period too short`}>
+          <Panel title="How adequate were these learning activities?">
+            <StackedBars items={d.activities} levels={ACTIVITY_LEVELS} />
+          </Panel>
+          <div className="grid-2" style={{ marginTop: 32 }}>
+            <Panel title="Teaching methods (1 to 5)">
+              <BarList items={d.teaching} color="var(--series-1)" max={5} unit=" / 5" />
+            </Panel>
+            <Panel title="Assessment methods (1 to 5)">
+              <BarList items={d.assessment} color="var(--series-7)" max={5} unit=" / 5" />
+            </Panel>
+          </div>
+          <div className="grid-2" style={{ marginTop: 32 }}>
+            <Panel title="200-hour industrial training">
+              <BarList items={d.trainingDuration} total={d.n} color="var(--series-4)" />
+            </Panel>
+            <Panel title="Was the exam system effective?">
+              <BarList items={d.evalEffective} total={d.n} color="var(--series-3)" />
+            </Panel>
+          </div>
+          <div className="grid-2" style={{ marginTop: 32 }}>
+            <Panel title="Which assessment methods should be strengthened?">
+              <BarList items={d.strengthen} total={d.n} color="var(--series-2)" />
+            </Panel>
+            <Panel title="Faced strict or challenging situations">
               <BarList items={d.facedChallenges} total={d.n} color="var(--series-8)" />
-            </div>
-            <div className="panel">
-              <h3>Course structure felt flexible</h3>
-              <BarList items={d.flexibility} total={d.n} color="var(--series-1)" />
-            </div>
+            </Panel>
           </div>
-        </section>
+          <div className="panel" style={{ marginTop: 32 }}>
+            <h3>Course structure felt flexible</h3>
+            <BarList items={d.flexibility} total={d.n} color="var(--series-1)" />
+          </div>
+        </Section>
 
-        {/* Careers */}
-        <section className="section">
-          <div className="section-head">
-            <h2>Where it leads</h2>
-            <span className="section-note">Job relatedness and time to first employment</span>
-          </div>
+        <Section title="Strengths and weaknesses" note="Questions 39 and 40: what graduates chose from the list">
           <div className="grid-2">
-            <div className="panel">
-              <h3>How closely their job matches the degree</h3>
-              <BarList items={d.jobRelatedness} total={d.n} color="var(--series-7)" />
-            </div>
-            <div className="panel">
-              <h3>Wait from graduation to first job</h3>
-              <BarList items={d.waitingPeriod} total={d.n} color="var(--series-5)" />
-            </div>
+            <Panel title="Key strengths">
+              <BarList items={d.strengths} total={d.n} color="var(--series-6)" />
+            </Panel>
+            <Panel title="Areas to improve">
+              <BarList items={d.improve} total={d.n} color="var(--series-8)" />
+            </Panel>
           </div>
-        </section>
+        </Section>
 
-        {/* Standing */}
-        <section className="section">
-          <div className="section-head">
-            <h2>How the programme stacks up</h2>
-            <span className="section-note">Against similar degrees, in graduates&rsquo; own words</span>
+        <Section title="In their own words" note="Every written answer, grouped by question and listed alphabetically">
+          <div>
+            {TEXT_QUESTIONS.map(([q, label]) => (
+              <details className="answers" key={q}>
+                <summary>
+                  {label}
+                  <span className="answers-count">{d.texts[q].length}</span>
+                </summary>
+                <ul>
+                  {d.texts[q].map((t, i) => (
+                    <li key={i}>{t}</li>
+                  ))}
+                </ul>
+              </details>
+            ))}
           </div>
-          <div className="grid-2">
-            <div className="panel">
-              <h3>Compared to similar programmes</h3>
-              <BarList items={d.comparedSimilar} total={d.n} color="var(--series-6)" />
-            </div>
-            <div className="panel">
-              <h3>Strengths vs. areas to improve</h3>
-              <div className="tag-row">
-                {d.strengths.map((s) => (
-                  <span className="tag" key={s.label}>
-                    <b>{s.value}</b> {s.label}
-                  </span>
-                ))}
-              </div>
-              <div className="tag-row" style={{ marginTop: 10 }}>
-                {d.improve.map((s) => (
-                  <span className="tag" key={s.label} style={{ borderColor: "var(--clay)" }}>
-                    <b>{s.value}</b> {s.label}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Quotes */}
-        {quotes.length > 0 && (
-          <section className="section">
-            <div className="section-head">
-              <h2>In their own words</h2>
-              <span className="section-note">Short, unedited comments from this cohort</span>
-            </div>
-            <div className="quote-grid">
-              {quotes.map((item, i) => (
-                <div className={`quote${item.weak ? " weak" : ""}`} key={i}>
-                  <span className="quote-kind">{item.kind}</span>
-                  &ldquo;{item.q}&rdquo;
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+        </Section>
 
         <footer className="footer">
           Graduate Satisfaction Survey on the Curriculum &mdash; Animal Bio-Resource
