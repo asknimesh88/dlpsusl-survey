@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Graduate Survey — Animal Bio-Resource Technology and Management</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF;--soft:#F1F5F1;--ink:#14201A;--ink-2:#5A6760;--line:#E0E7DF;
+  --green:#2E6B45;--teal:#2B8A99;--plum:#9A5B7A;--straw:#BE8F2C;
+  --l1:#9A5B7A;--l2:#D4A9BD;--l3:#DCE1D9;--l4:#95C0A0;--l5:#2E6B45;
+  --font:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#111713;--soft:#1A221D;--ink:#E7EDE8;--ink-2:#9CAAA1;--line:#293429;
+  --green:#7CC08F;--teal:#6CC1CF;--plum:#D094B0;--straw:#E0B457;
+  --l1:#BE7A9B;--l2:#6D4A5A;--l3:#38433C;--l4:#4E8961;--l5:#8FD3A1;}}
+:root[data-theme=dark]{
+  --bg:#111713;--soft:#1A221D;--ink:#E7EDE8;--ink-2:#9CAAA1;--line:#293429;
+  --green:#7CC08F;--teal:#6CC1CF;--plum:#D094B0;--straw:#E0B457;
+  --l1:#BE7A9B;--l2:#6D4A5A;--l3:#38433C;--l4:#4E8961;--l5:#8FD3A1;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--font);-webkit-font-smoothing:antialiased}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+header{padding:34px 0 0}
+.titles{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-end;justify-content:space-between}
+.kick{margin:0;font-size:.92rem;color:var(--ink-2)}
+.kick b{display:block;color:var(--ink);font-size:1.12rem;font-weight:600}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+select{background:var(--soft);border:0;border-radius:999px;padding:9px 34px 9px 16px;font-size:.9rem;font-weight:500;appearance:none;cursor:pointer;
+ background-image:linear-gradient(45deg,transparent 50%,var(--ink-2) 50%),linear-gradient(135deg,var(--ink-2) 50%,transparent 50%);
+ background-position:calc(100% - 18px) 55%,calc(100% - 13px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.reset{background:none;border:0;color:var(--teal);font-weight:600;font-size:.9rem;cursor:pointer;padding:6px}
+.hero{padding:52px 0 38px}
+.hero h1{margin:0;font-size:clamp(1.9rem,4.6vw,3.3rem);line-height:1.1;font-weight:600;letter-spacing:-.025em;max-width:20ch}
+.hero .hl{color:var(--green)}
+.stats{display:flex;flex-wrap:wrap;gap:12px 44px;margin-top:26px;color:var(--ink-2);font-size:.96rem}
+.stats strong{display:block;color:var(--ink);font-size:1.5rem;font-weight:600;font-variant-numeric:tabular-nums}
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{border:0;background:none;padding:12px 14px;margin-bottom:-1px;font-weight:600;font-size:.96rem;color:var(--ink-2);border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--ink)}
+.panel{padding:38px 0 70px}
+.panel[hidden]{display:none}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:46px 54px}
+.row+.row{margin-top:54px}
+@media (max-width:820px){.row{grid-template-columns:1fr;gap:40px}}
+.block h2{margin:0 0 4px;font-size:1.1rem;font-weight:600}
+.block .hint{margin:0 0 18px;color:var(--ink-2);font-size:.88rem}
+.wide{grid-column:1/-1}
+.findings{list-style:none;margin:0;padding:0;display:grid;gap:13px;max-width:72ch}
+.findings li{position:relative;padding-left:20px}
+.findings li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--green)}
+.bars{display:grid;gap:12px}
+.bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:baseline}
+.bar .lab{font-size:.93rem}
+.bar .val{font-size:.93rem;font-weight:600;font-variant-numeric:tabular-nums}
+.bar .val small{font-weight:400;color:var(--ink-2);margin-left:6px}
+.track{grid-column:1/-1;height:8px;border-radius:999px;background:var(--soft);overflow:hidden}
+.fill{height:100%;width:0;border-radius:999px;transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.segs{display:grid;gap:14px}
+.segrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;align-items:baseline}
+.segrow .val{font-weight:600;font-size:.93rem;font-variant-numeric:tabular-nums}
+.stack{grid-column:1/-1;display:flex;height:12px;border-radius:999px;overflow:hidden;gap:2px}
+.stack span{height:100%;width:0;transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;font-size:.82rem;color:var(--ink-2)}
+.key i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center;margin-bottom:20px}
+.seg{display:inline-flex;background:var(--soft);border-radius:999px;padding:4px}
+.seg button{border:0;background:none;padding:7px 15px;border-radius:999px;cursor:pointer;font-weight:500;font-size:.9rem;color:var(--ink-2)}
+.seg button[aria-pressed=true]{background:var(--bg);color:var(--ink);box-shadow:0 1px 2px rgba(20,32,26,.14),0 0 0 1px var(--line)}
+.chead,.courses li{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(130px,1.9fr) 54px 74px;gap:18px;align-items:center}
+.chead{font-size:.78rem;color:var(--ink-2);padding-bottom:8px}
+.chead span:nth-child(n+3){text-align:right}
+.courses{list-style:none;margin:0;padding:0}
+.courses li{padding:11px 0;border-bottom:1px solid var(--line)}
+.courses li:first-child{border-top:1px solid var(--line)}
+.courses .stack{grid-column:auto}
+.courses .nm{font-weight:500;font-size:.94rem;line-height:1.35}
+.courses .cd{font-size:.78rem;color:var(--ink-2)}
+.courses .mean{text-align:right;font-weight:600;font-size:1.04rem;font-variant-numeric:tabular-nums}
+.courses .top{text-align:right;font-size:.85rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+@media (max-width:640px){.chead{display:none}.courses li{grid-template-columns:minmax(0,1fr) 50px;gap:8px 12px}.courses .stack{grid-column:1/-1!important;grid-row:2}.courses .mean{grid-column:2;grid-row:1}.courses .top{display:none}}
+input[type=search]{background:var(--soft);border:0;border-radius:999px;padding:9px 16px;min-width:210px;font-size:.9rem}
+.count{margin-left:auto;color:var(--ink-2);font-size:.88rem}
+.comments{list-style:none;margin:0;padding:0;columns:2 320px;column-gap:40px}
+.comments li{break-inside:avoid;margin:0 0 18px;padding:0 0 18px;border-bottom:1px solid var(--line);font-size:.95rem;line-height:1.6}
+.comments mark{background:color-mix(in srgb,var(--straw) 36%,transparent);color:inherit;border-radius:3px;padding:0 2px}
+.empty{color:var(--ink-2)}
+footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:.84rem;padding:22px 0 46px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="wrap">
+ <div class="titles">
+  <p class="kick"><b>Graduate Satisfaction Survey</b>Animal Bio-Resource Technology and Management</p>
+  <div class="filters">
+   <select id="fYear" aria-label="Graduation year"><option value="All">All years</option></select>
+   <select id="fResult" aria-label="Final result"><option value="All">All results</option></select>
+   <select id="fSector" aria-label="Employment sector"><option value="All">All sectors</option></select>
+   <button class="reset" id="reset" type="button" hidden>Reset</button>
+  </div>
+ </div>
+</header>
+<main class="wrap">
+ <section class="hero" aria-live="polite">
+  <h1 id="headline">–</h1>
+  <div class="stats">
+   <div><strong id="sOverall">–</strong>overall experience, out of 5</div>
+   <div><strong id="sJob">–</strong>found a job within a month</div>
+   <div><strong id="sRelated">–</strong>work in a related field</div>
+   <div><strong id="sTrain">–</strong>say industrial training is too short</div>
+  </div>
+ </section>
+ <nav class="tabs" role="tablist" aria-label="Sections">
+  <button role="tab" id="t-summary" aria-controls="p-summary" aria-selected="true">Summary</button>
+  <button role="tab" id="t-courses" aria-controls="p-courses" aria-selected="false">Courses</button>
+  <button role="tab" id="t-careers" aria-controls="p-careers" aria-selected="false">Careers</button>
+  <button role="tab" id="t-teaching" aria-controls="p-teaching" aria-selected="false">Teaching</button>
+  <button role="tab" id="t-voices" aria-controls="p-voices" aria-selected="false">What graduates said</button>
+ </nav>
+
+ <section class="panel" id="p-summary" role="tabpanel" aria-labelledby="t-summary">
+  <div class="row"><div class="block wide"><h2>Key findings</h2><p class="hint">Updates with the filters above.</p><ul class="findings" id="findings"></ul></div></div>
+  <div class="row">
+   <div class="block"><h2>Overall ratings</h2><p class="hint">Rated 1 to 5 by each graduate.</p><div class="segs" id="bOverall"></div><div class="key lik"></div></div>
+   <div class="block"><h2>Practical components</h2><p class="hint">Were these sufficient during the degree?</p><div class="segs" id="bPrac"></div>
+    <div class="key"><span><i style="background:var(--l5)"></i>Sufficient</span><span><i style="background:var(--l3)"></i>Somewhat</span><span><i style="background:var(--l1)"></i>Inadequate</span></div></div>
+  </div>
+  <div class="row">
+   <div class="block"><h2>Strengths of the programme</h2><p class="hint">Selected from a list; more than one allowed.</p><div class="bars" id="bStrengths"></div></div>
+   <div class="block"><h2>Areas to improve</h2><p class="hint">Selected from a list; more than one allowed.</p><div class="bars" id="bImprove"></div></div>
+  </div>
+  <div class="row">
+   <div class="block"><h2>Compared with similar programmes</h2><p class="hint">How graduates rate this degree against others.</p><div class="bars" id="bCompare"></div></div>
+   <div class="block"><h2>Expectations met</h2><p class="hint">Grouped from written answers.</p><div class="bars" id="bExpect"></div></div>
+  </div>
+ </section>
+
+ <section class="panel" id="p-courses" role="tabpanel" aria-labelledby="t-courses" hidden>
+  <div class="toolbar">
+   <div class="seg" role="group" aria-label="Course group" id="groupSeg"></div>
+   <select id="sortBy" aria-label="Sort courses"><option value="high">Highest rated first</option><option value="low">Lowest rated first</option><option value="name">Course name</option></select>
+  </div>
+  <p class="hint" style="margin-top:-6px">Every graduate rated all 36 courses. The three aquatic courses sit at the bottom because this specialisation does not take them, so a low rating there means "not taken" rather than "poor".</p>
+  <div class="chead"><span>Course</span><span>Spread of ratings, 1 to 5</span><span>Mean</span><span>Rated 4–5</span></div>
+  <ul class="courses" id="courseList"></ul>
+  <div class="key lik"></div>
+  <div class="row" style="margin-top:52px">
+   <div class="block"><h2>Most useful in their careers</h2><p class="hint">Courses named in answer to question 15.</p><div class="bars" id="bUseful"></div></div>
+   <div class="block"><h2>Subjects to add</h2><p class="hint">Themes in written suggestions.</p><div class="bars" id="bNew"></div>
+    <h2 style="margin-top:34px">Any subjects outdated?</h2><p class="hint">Named most often: Animal Breeding, Genetics, Cereal Science, Swine Production and SAS taught on its own.</p><div class="bars" id="bOutdated"></div></div>
+  </div>
+ </section>
+
+ <section class="panel" id="p-careers" role="tabpanel" aria-labelledby="t-careers" hidden>
+  <div class="row">
+   <div class="block"><h2>Time to first job</h2><p class="hint">After graduating.</p><div class="bars" id="bWait"></div></div>
+   <div class="block"><h2>Is the job related to the degree?</h2><p class="hint">Current job.</p><div class="bars" id="bRelated"></div></div>
+  </div>
+  <div class="row">
+   <div class="block"><h2>Current roles</h2><p class="hint">Job titles grouped by type.</p><div class="bars" id="bRoles"></div></div>
+   <div class="block"><h2>Employment sector</h2><p class="hint">Current employer.</p><div class="bars" id="bSector"></div></div>
+  </div>
+  <div class="row">
+   <div class="block"><h2>Fields of expertise</h2><p class="hint">More than one allowed.</p><div class="bars" id="bFields"></div></div>
+   <div class="block"><h2>Postgraduate study</h2><p class="hint">Started or planning to start.</p><div class="bars" id="bPg"></div>
+    <h2 style="margin-top:34px">Final results</h2><p class="hint">Degree classification.</p><div class="bars" id="bResult"></div></div>
+  </div>
+ </section>
+
+ <section class="panel" id="p-teaching" role="tabpanel" aria-labelledby="t-teaching" hidden>
+  <div class="row">
+   <div class="block"><h2>Teaching methods</h2><p class="hint">How effective each was, 1 to 5.</p><div class="segs" id="bTeach"></div><div class="key lik"></div></div>
+   <div class="block"><h2>Assessment methods</h2><p class="hint">How effective each was, 1 to 5.</p><div class="segs" id="bAssess"></div></div>
+  </div>
+  <div class="row">
+   <div class="block"><h2>Learning outcomes and exams</h2><p class="hint">Rated 1 to 5.</p><div class="segs" id="bIlo"></div></div>
+   <div class="block"><h2>Methods to strengthen</h2><p class="hint">Selected from a list; more than one allowed.</p><div class="bars" id="bStrengthen"></div></div>
+  </div>
+  <div class="row">
+   <div class="block"><h2>Industrial training, 200 hours</h2><p class="hint">Is it long enough?</p><div class="bars" id="bTrain"></div>
+    <h2 style="margin-top:34px">Evaluation system effective?</h2><p class="hint">Examinations and assessment overall.</p><div class="bars" id="bEval"></div></div>
+   <div class="block"><h2>Improving research and training</h2><p class="hint">Themes in written suggestions.</p><div class="bars" id="bResearch"></div>
+    <h2 style="margin-top:34px">Improving assessment</h2><p class="hint">Themes in written suggestions.</p><div class="bars" id="bAssessSugg"></div></div>
+  </div>
+ </section>
+
+ <section class="panel" id="p-voices" role="tabpanel" aria-labelledby="t-voices" hidden>
+  <div class="row">
+   <div class="block"><h2>Strengths, in their words</h2><p class="hint">Themes in written answers.</p><div class="bars" id="bThS"></div></div>
+   <div class="block"><h2>Weaknesses, in their words</h2><p class="hint">Themes in written answers.</p><div class="bars" id="bThW"></div></div>
+  </div>
+  <div class="row">
+   <div class="block"><h2>Workload</h2><p class="hint">Grouped from written answers.</p><div class="bars" id="bWork"></div></div>
+   <div class="block"><h2>Challenges and flexibility</h2><p class="hint">Faced strict or challenging situations.</p><div class="bars" id="bChal"></div>
+    <h2 style="margin-top:34px">Flexibility in course structure</h2><p class="hint">Written answers, grouped.</p><div class="bars" id="bFlex"></div></div>
+  </div>
+  <div class="row"><div class="block wide">
+   <h2>Comments</h2><p class="hint">Edited for spelling and punctuation; placeholder answers left out.</p>
+   <div class="toolbar">
+    <select id="cQ" aria-label="Question"></select>
+    <input type="search" id="cSearch" placeholder="Search comments" aria-label="Search comments">
+    <span class="count" id="cCount"></span>
+   </div>
+   <ul class="comments" id="cList"></ul>
+  </div></div>
+ </section>
+</main>
+<footer><div class="wrap" id="foot"></div></footer>
+<script>
+const DATA=__DATA__;
+(function(){
+const R=DATA.rows,N=DATA.n,$=s=>document.querySelector(s);
+const st={year:'All',result:'All',sector:'All',group:'All',sort:'high'};
+const mean=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:NaN;
+const f2=x=>isNaN(x)?'–':x.toFixed(2);
+const pc=(v,t)=>t?Math.round(v/t*100)+'%':'–';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const rows=()=>R.filter(r=>(st.year==='All'||r.year===st.year)&&(st.result==='All'||r.result===st.result)&&(st.sector==='All'||r.sector===st.sector));
+const tally=(rs,fn,order)=>{const c={};rs.forEach(r=>[].concat(fn(r)).forEach(k=>{if(k!=null&&k!=='')c[k]=(c[k]||0)+1}));
+ return (order||Object.keys(c).sort((a,b)=>c[b]-c[a])).map(k=>[k,c[k]||0]).filter(x=>x[1]>0);};
+const LIK=['--l1','--l2','--l3','--l4','--l5'];
+document.querySelectorAll('.key.lik').forEach(k=>k.innerHTML=[1,2,3,4,5].map(s=>`<span><i style="background:var(${LIK[s-1]})"></i>${s}${s===1?' lowest':s===5?' highest':''}</span>`).join(''));
+$('#foot').textContent=`${N} graduates of the Animal Bio-Resource Technology and Management specialisation responded (${DATA.dates[0].replace(/\//g,'-')} to ${DATA.dates[1].replace(/\//g,'-')}). Written answers were grouped into themes by keyword, so theme counts are approximate.`;
+
+function grow(el){requestAnimationFrame(()=>requestAnimationFrame(()=>el.querySelectorAll('[data-w]').forEach(x=>x.style.width=x.dataset.w)))}
+function bars(id,items,{color='--green',total,showPct=true}={}){
+ const el=document.getElementById(id);if(!el)return;const mx=Math.max(1,...items.map(i=>i[1]));
+ el.innerHTML=items.length?items.map(([k,v])=>`<div class="bar"><span class="lab">${esc(k)}</span><span class="val">${showPct&&total?pc(v,total):v}${showPct&&total?`<small>${v}</small>`:''}</span><div class="track"><div class="fill" style="background:var(${color})" data-w="${v/mx*100}%"></div></div></div>`).join(''):'<p class="empty">No answers for this selection.</p>';
+ grow(el);}
+function segs(id,items,{cats=[1,2,3,4,5],colors=LIK,valFn}={}){
+ const el=document.getElementById(id);if(!el)return;
+ el.innerHTML=items.filter(i=>i[1].length).map(([k,vals])=>{const n=vals.length;
+  const sp=cats.map((c,j)=>{const p=vals.filter(v=>v===c).length/n*100;return p?`<span style="background:var(${colors[j]})" data-w="${p}%" title="${esc(String(c))}: ${Math.round(p)}%"></span>`:''}).join('');
+  return `<div class="segrow"><span>${esc(k)}</span><span class="val">${valFn?valFn(vals):f2(mean(vals))}</span><div class="stack">${sp}</div></div>`}).join('')||'<p class="empty">No answers for this selection.</p>';
+ grow(el);}
+
+const opts=(sel,vals)=>vals.forEach(v=>sel.insertAdjacentHTML('beforeend',`<option>${v}</option>`));
+opts($('#fYear'),[...new Set(R.map(r=>r.year))].sort());
+opts($('#fResult'),['First Class','Second Class Upper','Second Class Lower','General'].filter(v=>R.some(r=>r.result===v)));
+opts($('#fSector'),[...new Set(R.map(r=>r.sector))].sort());
+['fYear','fResult','fSector'].forEach(id=>$('#'+id).onchange=e=>{st[id.slice(1).toLowerCase()]=e.target.value;render()});
+$('#reset').onclick=()=>{st.year=st.result=st.sector='All';['fYear','fResult','fSector'].forEach(i=>$('#'+i).value='All');render()};
+
+const tabs=[...document.querySelectorAll('[role=tab]')];
+function pick(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+ try{history.replaceState(null,'','#'+t.id.slice(2))}catch(e){}render()}
+tabs.forEach((t,i)=>{t.onclick=()=>pick(t);t.onkeydown=e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];n.focus();pick(n)}}});
+
+const GROUPS=Object.entries(DATA.groups),COURSES=GROUPS.flatMap(([g,cs])=>cs.map(c=>({...c,group:g})));
+$('#groupSeg').innerHTML=[['All','All courses'],...GROUPS.map(([g])=>[g,g])].map(([k,l])=>`<button data-g="${esc(k)}" aria-pressed="${k==='All'}">${esc(l)}</button>`).join('');
+$('#groupSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{st.group=b.dataset.g;$('#groupSeg').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderCourses()});
+$('#sortBy').onchange=e=>{st.sort=e.target.value;renderCourses()};
+function renderCourses(){
+ const rs=rows();
+ const list=COURSES.filter(c=>st.group==='All'||c.group===st.group).map(c=>{const v=rs.map(r=>r.courses[c.name]);return{...c,v,m:mean(v),pos:v.filter(x=>x>=4).length}});
+ list.sort((a,b)=>st.sort==='name'?a.name.localeCompare(b.name):st.sort==='low'?a.m-b.m:b.m-a.m);
+ const el=$('#courseList');
+ el.innerHTML=list.map(c=>{const n=c.v.length;
+  const sp=[1,2,3,4,5].map(k=>{const p=n?c.v.filter(x=>x===k).length/n*100:0;return p?`<span style="background:var(${LIK[k-1]})" data-w="${p}%" title="${k}: ${Math.round(p)}%"></span>`:''}).join('');
+  return `<li><div><div class="nm">${esc(c.name)}</div><div class="cd">${esc(c.code)} · ${esc(c.group.toLowerCase())}</div></div><div class="stack" role="img" aria-label="${esc(c.name)}: mean ${f2(c.m)}">${sp}</div><div class="mean">${f2(c.m)}</div><div class="top">${pc(c.pos,n)}</div></li>`}).join('');
+ grow(el);}
+
+const QS=[['final','Final comments and suggestions'],['strength','Key strength'],['weakness','Key weakness'],
+ ['newTopics','New subjects to add'],['research','Research and industrial training'],['assessSugg','Improving assessment'],
+ ['teachSugg','Improving teaching'],['workloadText','Workload'],['teachComment','Teaching and learning'],
+ ['recommendText','Would you recommend it?'],['outdatedWhich','Outdated or less useful subjects'],
+ ['core','Comments on core courses'],['comp','Comments on specialisation courses'],['challengeText','Challenges faced']];
+$('#cQ').innerHTML=QS.map(([k,l])=>`<option value="${k}">${esc(l)}</option>`).join('');
+$('#cQ').onchange=renderComments;$('#cSearch').oninput=renderComments;
+function renderComments(){
+ const k=$('#cQ').value,q=$('#cSearch').value.trim().toLowerCase();
+ let items=rows().map(r=>r.comments[k]).filter(Boolean);
+ if(q)items=items.filter(t=>t.toLowerCase().includes(q));
+ $('#cCount').textContent=`${items.length} comment${items.length===1?'':'s'}`;
+ const hl=t=>{let s=esc(t);if(q){const re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');s=s.replace(re,'<mark>$1</mark>')}return s};
+ $('#cList').innerHTML=items.length?items.map(t=>`<li>${hl(t)}</li>`).join(''):'<li class="empty">No comments match. Try another question or clear the search.</li>';}
+const themes=(rs,key)=>tally(rs.filter(r=>r.themes[key]),r=>r.themes[key]).filter(i=>i[0]!=='Other');
+
+function render(){
+ const rs=rows(),n=rs.length,cnt=f=>rs.filter(f).length;
+ $('#reset').hidden=(st.year==='All'&&st.result==='All'&&st.sector==='All');
+ const who=n===N?'graduates':'of the graduates selected';
+ $('#headline').innerHTML=n?`<span class="hl">${pc(cnt(r=>r.recommend==='Yes'),n)}</span> of ${n} ${n===N?'graduates':'selected graduates'} would recommend this degree.`:'No graduates match these filters.';
+ $('#sOverall').textContent=f2(mean(rs.map(r=>r.overall)));
+ $('#sJob').textContent=pc(cnt(r=>r.wait==='Less than 1 month'),n);
+ $('#sRelated').textContent=pc(cnt(r=>r.related!=='Not related'),n);
+ $('#sTrain').textContent=pc(cnt(r=>r.trainDur==='Too short'),n);
+ const vis=id=>!document.getElementById(id).hidden;
+ if(vis('p-summary')){
+  if(n){const cm=COURSES.map(c=>[c.name,mean(rs.map(r=>r.courses[c.name]))]).sort((a,b)=>b[1]-a[1]);
+   const imp=tally(rs,r=>r.improve)[0],wk=themes(rs,'weakness')[0];
+   $('#findings').innerHTML=[
+    `The highest-rated courses are ${esc(cm[0][0])} (${f2(cm[0][1])}) and ${esc(cm[1][0])} (${f2(cm[1][1])}); the lowest is ${esc(cm[cm.length-1][0])} (${f2(cm[cm.length-1][1])}).`,
+    imp?`The most selected area to improve is ${esc(imp[0].toLowerCase())}, chosen by ${pc(imp[1],n)} of them.`:'',
+    wk?`In written answers, the weakness raised most often is ${esc(wk[0].toLowerCase())} (${wk[1]} of ${rs.filter(r=>r.themes.weakness).length} comments).`:'',
+    `${pc(cnt(r=>r.compare==='More comprehensive'),n)} consider this degree more comprehensive than similar programmes, and ${pc(cnt(r=>r.evalEff==='Yes'),n)} found the examination system effective.`,
+   ].filter(Boolean).map(t=>`<li>${t}</li>`).join('');
+  }else $('#findings').innerHTML='<li>No graduates match these filters.</li>';
+  segs('bOverall',[['Overall graduate experience',rs.map(r=>r.overall)],['Prepared me for my career',rs.map(r=>r.prep)],['Job-related skills gained',rs.map(r=>r.skills)]]);
+  const PC=['Laboratory experiments','Field-based learning','Industry visits','Product development','Workshops','Case studies'];
+  segs('bPrac',PC.map(k=>[k,rs.map(r=>r.prac[k])]),{cats:['Sufficient','Somewhat','Inadequate'],colors:['--l5','--l3','--l1'],valFn:v=>pc(v.filter(x=>x==='Sufficient').length,v.length)});
+  bars('bStrengths',tally(rs,r=>r.strengths),{total:n});
+  bars('bImprove',tally(rs,r=>r.improve),{total:n,color:'--plum'});
+  bars('bCompare',tally(rs,r=>r.compare,['More comprehensive','Similar','Lacks key aspects']),{total:n,color:'--teal'});
+  bars('bExpect',tally(rs,r=>r.expect,['Yes','Somewhat','Other answer']),{total:n,color:'--straw'});
+ }
+ if(vis('p-courses')){renderCourses();
+  bars('bUseful',tally(rs,r=>r.useful).slice(0,10),{showPct:false,color:'--teal'});
+  bars('bNew',themes(rs,'newTopics'),{showPct:false});
+  bars('bOutdated',tally(rs,r=>r.outdated,['Yes','No']),{total:n,color:'--plum'});}
+ if(vis('p-careers')){
+  bars('bWait',tally(rs,r=>r.wait,['Less than 1 month','1 to 6 months','6 to 12 months','More than 12 months']),{total:n});
+  bars('bRelated',tally(rs,r=>r.related,['Directly related','Somewhat related','Not related']),{total:n,color:'--teal'});
+  bars('bRoles',tally(rs,r=>r.role).filter(i=>i[0]!=='Not stated'),{total:n});
+  bars('bSector',tally(rs,r=>r.sector),{total:n,color:'--teal'});
+  bars('bFields',tally(rs,r=>r.fields),{total:n});
+  bars('bPg',tally(rs,r=>r.pg,['Yes','Planning to start','Not yet','Never']).map(([k,v])=>[k==='Yes'?'Started':k,v]),{total:n,color:'--straw'});
+  bars('bResult',tally(rs,r=>r.result,['First Class','Second Class Upper','Second Class Lower','General']),{total:n,color:'--straw'});}
+ if(vis('p-teaching')){
+  segs('bTeach',Object.keys(R[0].teach).map(k=>[k,rs.map(r=>r.teach[k])]).sort((a,b)=>mean(b[1])-mean(a[1])));
+  segs('bAssess',Object.keys(R[0].assess).map(k=>[k,rs.map(r=>r.assess[k])]).sort((a,b)=>mean(b[1])-mean(a[1])));
+  segs('bIlo',[['Learning outcomes communicated properly',rs.map(r=>r.ilo)],['Assessments aligned with outcomes',rs.map(r=>r.aligned)],['Exam schedules were flexible',rs.map(r=>r.flexExam)]]);
+  bars('bStrengthen',tally(rs,r=>r.strengthen),{total:n,color:'--straw'});
+  bars('bTrain',tally(rs,r=>r.trainDur,['Too short','Adequate']),{total:n,color:'--plum'});
+  bars('bEval',tally(rs,r=>r.evalEff,['Yes','Partly','No']),{total:n,color:'--teal'});
+  bars('bResearch',themes(rs,'research'),{showPct:false});
+  bars('bAssessSugg',themes(rs,'assessSugg'),{showPct:false,color:'--teal'});}
+ if(vis('p-voices')){
+  bars('bThS',themes(rs,'strength'),{showPct:false});
+  bars('bThW',themes(rs,'weakness'),{showPct:false,color:'--plum'});
+  bars('bWork',tally(rs,r=>r.workload,['Manageable','Heavy but worthwhile','Heavy in some subjects','Too heavy','Other comment','No answer']),{total:n,color:'--straw'});
+  bars('bChal',tally(rs,r=>r.challenge,['No','Yes','Sometimes','No answer']),{total:n,color:'--plum'});
+  bars('bFlex',tally(rs,r=>r.flex,['Yes','Somewhat','No','No answer']),{total:n,color:'--teal'});
+  renderComments();}
+}
+let start;try{start=tabs.find(t=>'#'+t.id.slice(2)===location.hash)}catch(e){}
+start?pick(start):render();
+})();
+</script>
+</body>
+</html>
