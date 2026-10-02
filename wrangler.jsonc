@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dlpsusl-survey",
+  "compatibility_date": "2026-09-21",
+  // Static export: build with Next, then serve the out/ folder as static assets
+  "build": { "command": "npm run build" },
+  "assets": { "directory": "./out", "not_found_handling": "404-page" },
+  // Requires the dlpsusl.com zone to be on the same Cloudflare account
+  "routes": [{ "pattern": "survey.dlpsusl.com", "custom_domain": true }]
+}
