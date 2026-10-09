@@ -36,7 +36,17 @@ select{background:var(--soft);border:0;border-radius:999px;padding:9px 34px 9px 
  background-image:linear-gradient(45deg,transparent 50%,var(--ink-2) 50%),linear-gradient(135deg,var(--ink-2) 50%,transparent 50%);
  background-position:calc(100% - 18px) 55%,calc(100% - 13px) 55%;background-size:5px 5px;background-repeat:no-repeat}
 .reset{background:none;border:0;color:var(--teal);font-weight:600;font-size:.9rem;cursor:pointer;padding:6px}
-.hero{padding:52px 0 38px}
+.modtabs{display:flex;gap:4px;border-bottom:2px solid var(--line);margin-top:22px;overflow-x:auto;scrollbar-width:none}
+.modtabs::-webkit-scrollbar{display:none}
+.modtabs button{border:0;background:none;padding:13px 18px 11px;margin-bottom:-2px;cursor:pointer;text-align:left;white-space:nowrap;border-bottom:2px solid transparent;color:var(--ink-2)}
+.modtabs button[aria-selected=true]{border-bottom-color:var(--green);color:var(--ink)}
+.modtabs .ml{display:block;font-weight:600;font-size:1.05rem;letter-spacing:-.01em}
+.modtabs .mc{display:block;font-size:.82rem;margin-top:3px}
+.modtabs .short{display:none}
+@media (max-width:520px){.modtabs button{padding:12px 10px 10px}.modtabs .ml{font-size:.95rem}
+ .modtabs .full{display:none}.modtabs .short{display:inline}}
+.warn{margin:22px 0 0;padding:11px 16px;border-left:3px solid var(--straw);background:var(--soft);border-radius:0 8px 8px 0;color:var(--ink-2);font-size:.9rem;max-width:76ch}
+.hero{padding:40px 0 38px}
 .hero h1{margin:0;font-size:clamp(1.9rem,4.6vw,3.3rem);line-height:1.1;font-weight:600;letter-spacing:-.025em;max-width:20ch}
 .hero .hl{color:var(--green)}
 .stats{display:flex;flex-wrap:wrap;gap:12px 44px;margin-top:26px;color:var(--ink-2);font-size:.96rem}
@@ -99,7 +109,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:.84rem;padd
 <body>
 <header class="wrap">
  <div class="titles">
-  <p class="kick"><b>Graduate Satisfaction Survey</b>Animal Bio-Resource Technology and Management</p>
+  <p class="kick"><b>Graduate Satisfaction Survey</b><span id="kickSub">–</span></p>
   <div class="filters">
    <select id="fYear" aria-label="Graduation year"><option value="All">All years</option></select>
    <select id="fResult" aria-label="Final result"><option value="All">All results</option></select>
@@ -109,6 +119,8 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:.84rem;padd
  </div>
 </header>
 <main class="wrap">
+ <nav class="modtabs" role="tablist" aria-label="Specialisation" id="modTabs"></nav>
+ <div id="moduleView">
  <section class="hero" aria-live="polite">
   <h1 id="headline">–</h1>
   <div class="stats">
@@ -117,6 +129,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:.84rem;padd
    <div><strong id="sRelated">–</strong>work in a related field</div>
    <div><strong id="sTrain">–</strong>say industrial training is too short</div>
   </div>
+  <p class="warn" id="warn" hidden></p>
  </section>
  <nav class="tabs" role="tablist" aria-label="Sections">
   <button role="tab" id="t-summary" aria-controls="p-summary" aria-selected="true">Summary</button>
@@ -148,7 +161,7 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:.84rem;padd
    <div class="seg" role="group" aria-label="Course group" id="groupSeg"></div>
    <select id="sortBy" aria-label="Sort courses"><option value="high">Highest rated first</option><option value="low">Lowest rated first</option><option value="name">Course name</option></select>
   </div>
-  <p class="hint" style="margin-top:-6px">Every graduate rated all 36 courses. The three aquatic courses sit at the bottom because this specialisation does not take them, so a low rating there means "not taken" rather than "poor".</p>
+  <p class="hint" id="courseNote" style="margin-top:-6px"></p>
   <div class="chead"><span>Course</span><span>Spread of ratings, 1 to 5</span><span>Mean</span><span>Rated 4–5</span></div>
   <ul class="courses" id="courseList"></ul>
   <div class="key lik"></div>
@@ -212,13 +225,15 @@ footer{border-top:1px solid var(--line);color:var(--ink-2);font-size:.84rem;padd
    <ul class="comments" id="cList"></ul>
   </div></div>
  </section>
+ </div>
 </main>
 <footer><div class="wrap" id="foot"></div></footer>
 <script>
 const DATA=__DATA__;
 (function(){
-const R=DATA.rows,N=DATA.n,$=s=>document.querySelector(s);
-const st={year:'All',result:'All',sector:'All',group:'All',sort:'high'};
+const $=s=>document.querySelector(s);
+const st={mod:0,year:'All',result:'All',sector:'All',group:'All',sort:'high'};
+let MOD=DATA.modules[0],R=MOD.rows,N=MOD.n;
 const mean=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:NaN;
 const f2=x=>isNaN(x)?'–':x.toFixed(2);
 const pc=(v,t)=>t?Math.round(v/t*100)+'%':'–';
@@ -228,7 +243,11 @@ const tally=(rs,fn,order)=>{const c={};rs.forEach(r=>[].concat(fn(r)).forEach(k=
  return (order||Object.keys(c).sort((a,b)=>c[b]-c[a])).map(k=>[k,c[k]||0]).filter(x=>x[1]>0);};
 const LIK=['--l1','--l2','--l3','--l4','--l5'];
 document.querySelectorAll('.key.lik').forEach(k=>k.innerHTML=[1,2,3,4,5].map(s=>`<span><i style="background:var(${LIK[s-1]})"></i>${s}${s===1?' lowest':s===5?' highest':''}</span>`).join(''));
-$('#foot').textContent=`${N} graduates of the Animal Bio-Resource Technology and Management specialisation responded (${DATA.dates[0].replace(/\//g,'-')} to ${DATA.dates[1].replace(/\//g,'-')}). Written answers were grouped into themes by keyword, so theme counts are approximate.`;
+$('#modTabs').innerHTML=DATA.modules.map((m,i)=>
+ `<button role="tab" id="m-${esc(m.id)}" aria-controls="moduleView" aria-selected="${i===0}"><span class="ml"><span class="full">${esc(m.label)}</span><span class="short">${esc(m.label.split(' ')[0])}</span></span><span class="mc">${m.n} graduate${m.n===1?'':'s'}</span></button>`).join('');
+const modTabs=[...$('#modTabs').querySelectorAll('button')];
+modTabs.forEach((b,i)=>{b.onclick=()=>setModule(i);
+ b.onkeydown=e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const j=(i+(e.key==='ArrowRight'?1:modTabs.length-1))%modTabs.length;modTabs[j].focus();setModule(j)}}});
 
 function grow(el){requestAnimationFrame(()=>requestAnimationFrame(()=>el.querySelectorAll('[data-w]').forEach(x=>x.style.width=x.dataset.w)))}
 function bars(id,items,{color='--green',total,showPct=true}={}){
@@ -242,21 +261,37 @@ function segs(id,items,{cats=[1,2,3,4,5],colors=LIK,valFn}={}){
   return `<div class="segrow"><span>${esc(k)}</span><span class="val">${valFn?valFn(vals):f2(mean(vals))}</span><div class="stack">${sp}</div></div>`}).join('')||'<p class="empty">No answers for this selection.</p>';
  grow(el);}
 
-const opts=(sel,vals)=>vals.forEach(v=>sel.insertAdjacentHTML('beforeend',`<option>${v}</option>`));
-opts($('#fYear'),[...new Set(R.map(r=>r.year))].sort());
-opts($('#fResult'),['First Class','Second Class Upper','Second Class Lower','General'].filter(v=>R.some(r=>r.result===v)));
-opts($('#fSector'),[...new Set(R.map(r=>r.sector))].sort());
+const fill=(sel,first,vals)=>{sel.innerHTML=`<option value="All">${first}</option>`+vals.map(v=>`<option>${esc(v)}</option>`).join('')};
+function buildFilters(){
+ fill($('#fYear'),'All years',[...new Set(R.map(r=>r.year))].sort());
+ fill($('#fResult'),'All results',['First Class','Second Class Upper','Second Class Lower','General'].filter(v=>R.some(r=>r.result===v)));
+ fill($('#fSector'),'All sectors',[...new Set(R.map(r=>r.sector))].sort());
+}
 ['fYear','fResult','fSector'].forEach(id=>$('#'+id).onchange=e=>{st[id.slice(1).toLowerCase()]=e.target.value;render()});
 $('#reset').onclick=()=>{st.year=st.result=st.sector='All';['fYear','fResult','fSector'].forEach(i=>$('#'+i).value='All');render()};
 
-const tabs=[...document.querySelectorAll('[role=tab]')];
+const tabs=[...document.querySelectorAll('.tabs [role=tab]')];
 function pick(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
  try{history.replaceState(null,'','#'+t.id.slice(2))}catch(e){}render()}
 tabs.forEach((t,i)=>{t.onclick=()=>pick(t);t.onkeydown=e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];n.focus();pick(n)}}});
 
-const GROUPS=Object.entries(DATA.groups),COURSES=GROUPS.flatMap(([g,cs])=>cs.map(c=>({...c,group:g})));
-$('#groupSeg').innerHTML=[['All','All courses'],...GROUPS.map(([g])=>[g,g])].map(([k,l])=>`<button data-g="${esc(k)}" aria-pressed="${k==='All'}">${esc(l)}</button>`).join('');
-$('#groupSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{st.group=b.dataset.g;$('#groupSeg').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderCourses()});
+let GROUPS=[],COURSES=[];
+function buildGroups(){
+ GROUPS=Object.entries(MOD.groups);COURSES=GROUPS.flatMap(([g,cs])=>cs.map(c=>({...c,group:g})));
+ $('#groupSeg').innerHTML=[['All','All courses'],...GROUPS.map(([g])=>[g,g])].map(([k,l])=>`<button data-g="${esc(k)}" aria-pressed="${k===st.group}">${esc(l)}</button>`).join('');
+ $('#groupSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{st.group=b.dataset.g;$('#groupSeg').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderCourses()});
+}
+function setModule(i){
+ st.mod=i;MOD=DATA.modules[i];R=MOD.rows;N=MOD.n;
+ st.year=st.result=st.sector='All';st.group='All';
+ modTabs.forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1});
+ $('#kickSub').textContent=MOD.full;
+ $('#warn').hidden=!MOD.warn;$('#warn').textContent=MOD.warn||'';
+ $('#courseNote').textContent=MOD.note||'';
+ $('#cSearch').value='';
+ $('#foot').textContent=`${N} graduates of the ${MOD.full} specialisation responded (${MOD.dates[0]} to ${MOD.dates[1]}). Written answers were grouped into themes by keyword, so theme counts are approximate.`;
+ buildFilters();buildGroups();render();
+}
 $('#sortBy').onchange=e=>{st.sort=e.target.value;renderCourses()};
 function renderCourses(){
  const rs=rows();
@@ -310,7 +345,7 @@ function render(){
   bars('bStrengths',tally(rs,r=>r.strengths),{total:n});
   bars('bImprove',tally(rs,r=>r.improve),{total:n,color:'--plum'});
   bars('bCompare',tally(rs,r=>r.compare,['More comprehensive','Similar','Lacks key aspects']),{total:n,color:'--teal'});
-  bars('bExpect',tally(rs,r=>r.expect,['Yes','Somewhat','Other answer']),{total:n,color:'--straw'});
+  bars('bExpect',tally(rs,r=>r.expect,['Yes','Somewhat','No','Other answer']),{total:n,color:'--straw'});
  }
  if(vis('p-courses')){renderCourses();
   bars('bUseful',tally(rs,r=>r.useful).slice(0,10),{showPct:false,color:'--teal'});
@@ -342,7 +377,8 @@ function render(){
   renderComments();}
 }
 let start;try{start=tabs.find(t=>'#'+t.id.slice(2)===location.hash)}catch(e){}
-start?pick(start):render();
+if(start)tabs.forEach(x=>{const on=x===start;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+setModule(0);
 })();
 </script>
 </body>

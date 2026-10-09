@@ -316,3 +316,97 @@ POST = {
 "From lectures.":"Yes, from the lectures.",
 "Better for boys.":"Yes, though I think it suits male graduates better.",
 }
+
+# --- Aquatic Bio-Resource module -------------------------------------------
+POST.update({
+"This course fill with more things. More effective curriculum.":
+ "This course is filled with a lot of content, and the curriculum is effective.",
+"I think increase practical sessions will be more useful.":
+ "I think increasing the practical sessions would be more useful.",
+"I thinks subjects about marine fish biology and their production is essential for curriculum.":
+ "I think subjects on marine fish biology and production are essential for the curriculum.",
+"3 month time period an insufficient to do a good research. We have to done it immediately. Can't obtain better results.":
+ "Three months is not enough time to do good research. We had to rush it, so we could not obtain better results.",
+"I think online learning method have more disadvantages. Students can't engage with lectures physically. Signal issues causes many problems.":
+ "I think the online learning method has more disadvantages. Students cannot attend lectures in person, and signal problems cause a lot of difficulty.",
+"Time gap between exams or subjects at least have one day.":
+ "There should be a gap of at least one day between exams.",
+"Yes. I think this degree programme is best among other university in sri lanka. Because we had more practical experience about subjects.":
+ "Yes. I think this degree programme is the best among Sri Lankan universities, because we had more practical experience of the subjects.",
+"All lecturers are fully support to our academic path.":
+ "All the lecturers fully supported our academic path.",
+"There is no much workload for us.":"The workload is not heavy for us.",
+"No. Fram practice is somewhat challenging in 1st sessions. But it also good opportunity to us.":
+ "No. Farm practice was somewhat challenging in the first sessions, but it was also a good opportunity for us.",
+"Yes. Management is friendly and support to us much.":"Yes. The management is friendly and very supportive.",
+"Our degree programme have best professional in various fields. And the practical exposure is very helpful to us in career.":
+ "Our degree programme has excellent professionals in various fields, and the practical exposure is very helpful in our careers.",
+"There is no weakness that I have seen.":"I have not seen any weakness.",
+"Yes. Because quality is high in every ways.":"Yes, because the quality is high in every way.",
+"I think this degree programme must be give many generation. Both aquatic bio resource module and animal bio resourse module.":
+ "I think this degree programme should be offered to many more generations of students, both the aquatic and the animal bio-resource modules.",
+"Quality control include quality certificate.":"Quality control, including quality certification.",
+"Increase training time period.":"Increase the training period.",
+"Flexible examination schedule.":"A more flexible examination schedule.",
+"Helpful to survive in industry.":"It helps you survive in industry.",
+"Please add meat science subject to aquatic module as compulsory subject.":
+ "Please add Meat Science as a compulsory subject in the aquatic module.",
+"Meat science technology.":"Meat Science and Technology.",
+"GOOD.":"Good.",
+"YES.":"Yes.",
+"I satisfied about degree.":"I am satisfied with the degree.",
+"Need some subject related to marine aquaculture and fisheries.":
+ "Some subjects related to marine aquaculture and fisheries are needed.",
+"Need more than 15 weeks.":"The period needs to be more than 15 weeks.",
+"Have to touch marine sector.":"The marine sector needs to be covered.",
+"I know my career is not related to this subjects but they helped me to be the person who I am today.":
+ "I know my career is not related to these subjects, but they helped me become the person I am today.",
+"Again same thing to say, Everything I learned helped me to build myself.":
+ "The same again: everything I learned helped me build myself.",
+"I love aqua Scaping so I believe more activities related to aqua scaping would be interesting to students.":
+ "I love aquascaping, so I believe more activities related to aquascaping would interest students.",
+"Everything was good, feel like it is already perfect.":
+ "Everything was good; it feels as though it is already perfect.",
+"Felt ok.":"It felt fine.",
+"Yes, it is a beautiful journey with up and downs.":"Yes. It is a beautiful journey, with ups and downs.",
+"Farm practice should be related with the industry.":"Farm practice should be linked to industry.",
+"Should be update with the latest technology and related to the industry.":
+ "These should be updated with the latest technology and linked to industry.",
+"Breeding technique, Farming Technique, Management Technique, Problem Solving.":
+ "Breeding techniques, farming techniques, management techniques and problem solving.",
+"Research should be industrial related, Training period should be more than 03 months and critically evaluate the industrial experience.":
+ "Research should be industry-related. The training period should be more than three months, and the industrial experience should be critically evaluated.",
+"Problem Solving.":"Problem solving.",
+"Industrial Based Assessment, Industrial Problem solving assessment.":
+ "Industry-based assessment, and industrial problem-solving assessment.",
+"Yes, Definitely.":"Yes, definitely.",
+"Lecture panel, Industrial relationship.":"The lecture panel, and the relationship with industry.",
+"Too short industrial training period, industry related practical exposure too much low.":
+ "The industrial training period is too short, and industry-related practical exposure is very limited.",
+"Yes, definitely. Lot of job opportunities are there for boys.":
+ "Yes, definitely. There are a lot of job opportunities for boys.",
+"Finally, every graduate should be perform to industry.":
+ "In the end, every graduate should be ready to perform in industry.",
+"Some subjects are related to both academic and professional pathways. But above subjects are important.":
+ "Some subjects are relevant to both academic and professional pathways, but the subjects above are important.",
+"These subjects essential for course. Important for get practical and theoretical knowledge.":
+ "These subjects are essential for the course, and important for gaining practical and theoretical knowledge.",
+"No all subjects are essential.":"No, all the subjects are essential.",
+"I think marine fish biology and production subject must be add.":
+ "I think a subject on marine fish biology and production must be added.",
+"Final year research and training time period is not enough for conduct better research.":
+ "The final-year research and training period is not long enough to conduct good research.",
+"Time gap between two subjects in the exam at least.":
+ "There should be at least a one-day gap between two subjects in the exam timetable.",
+"During online learning signal issues were main problem.":
+ "During online learning, signal problems were the main issue.",
+"Our farm is more important for complete our degree.":"Our farm is very important for completing the degree.",
+"Reduced the duration of online study period.":"Reduce the duration of the online study period.",
+"Yes of course because I think this course is best among other universities.":
+ "Yes, of course, because I think this course is the best among other universities.",
+"This course is best course. It was helped me to achieved by goals.":
+ "This is the best course. It helped me achieve my goals.",
+"It include Very imported lab practice.":"It includes very important lab practice.",
+"I think it should be more difficult and practical.":
+ "I think it should be more demanding and more practical.",
+})

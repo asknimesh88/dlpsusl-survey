@@ -20,7 +20,8 @@ TYPOS = {
  'specialization':'specialisation','specialized':'specialised',
 }
 NONRESP = {'','-','.','*','no','none','nothing','no comments','no comment','no special comments','no suggestions',
-           'not applicable','no idea','n/a','na','no.','nil','no problems'}
+           'not applicable','no idea','n/a','na','no.','nil','no problems','no answer','no answer for that',
+           'xx','xxx','xxxx','xxxxx','mo','x','ok.','none.'}
 
 def _typos(s):
     for k,v in TYPOS.items():
