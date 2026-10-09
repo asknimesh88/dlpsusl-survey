@@ -1,0 +1,1355 @@
+{
+ "courseColumns": [
+  {
+   "id": "LP11013-0",
+   "code": "LP11013",
+   "title": "Anatomy and Physiology of Farm Animals",
+   "category": "core"
+  },
+  {
+   "id": "LP11022-1",
+   "code": "LP11022",
+   "title": "Genetics",
+   "category": "core"
+  },
+  {
+   "id": "LP11032-2",
+   "code": "LP11032",
+   "title": "Introduction to Aquatic Biology and Aquaculture",
+   "category": "core"
+  },
+  {
+   "id": "LP12012-3",
+   "code": "LP12012",
+   "title": "Fundamentals of Biochemistry",
+   "category": "core"
+  },
+  {
+   "id": "LP12023-4",
+   "code": "LP12023",
+   "title": "Principles of Food Science & Technology",
+   "category": "core"
+  },
+  {
+   "id": "LP21012-5",
+   "code": "LP21012",
+   "title": "Animal Health & Hygiene",
+   "category": "core"
+  },
+  {
+   "id": "LP21022-6",
+   "code": "LP21022",
+   "title": "Management of Non-Ruminants",
+   "category": "core"
+  },
+  {
+   "id": "LP21032-7",
+   "code": "LP21032",
+   "title": "Agrostology",
+   "category": "core"
+  },
+  {
+   "id": "LP22012-8",
+   "code": "LP22012",
+   "title": "Principles of Animal Nutrition",
+   "category": "core"
+  },
+  {
+   "id": "LP21022-9",
+   "code": "LP21022",
+   "title": "Farm Practice-LP",
+   "category": "core"
+  },
+  {
+   "id": "LP21032-10",
+   "code": "LP21032",
+   "title": "Management of Ruminants",
+   "category": "core"
+  },
+  {
+   "id": "LP31032-11",
+   "code": "LP31032",
+   "title": "Food Microbiology",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP31063-12",
+   "code": "LP31063",
+   "title": "Quality Management of Food Processing and Handling",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP31083-13",
+   "code": "LP31083",
+   "title": "Applied Fish Nutrition and Live Feed Technology",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP31093-14",
+   "code": "LP31093",
+   "title": "Biology of Aquatic Organisms",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP31103-15",
+   "code": "LP31103",
+   "title": "Fish Diseases and Health Management",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP31113-16",
+   "code": "LP31113",
+   "title": "Principles of Aquatic Bioresource Management",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP32032-17",
+   "code": "LP32032",
+   "title": "Applications of Aquatic Bioresource Management",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP32082-18",
+   "code": "LP32082",
+   "title": "Risk Assessment and Food Safety Management in Fishery Product",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP32103-19",
+   "code": "LP32103",
+   "title": "Fishery Product Technology",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP32113-20",
+   "code": "LP32113",
+   "title": "Recent Advances in Biotechnology and Molecular Biology in Aquaculture",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP32123-21",
+   "code": "LP32123",
+   "title": "Technology of Fish Species Production",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP41072-22",
+   "code": "LP41072",
+   "title": "Fish Breeding and Larviculture",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP41103-23",
+   "code": "LP41103",
+   "title": "Ornamental Fish Culture",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP41122-24",
+   "code": "LP41122",
+   "title": "Proposal Formulation & Scientific Writing",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP42012-25",
+   "code": "LP42012",
+   "title": "Industrial Training",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP42026-26",
+   "code": "LP42026",
+   "title": "Research Project",
+   "category": "compulsory"
+  },
+  {
+   "id": "LP32012-27",
+   "code": "LP32012",
+   "title": "Animal Biotechnology",
+   "category": "elective"
+  },
+  {
+   "id": "LP32042-28",
+   "code": "LP32042",
+   "title": "Applied Animal Nutrition",
+   "category": "elective"
+  },
+  {
+   "id": "LP32092-29",
+   "code": "LP32092",
+   "title": "Zoonoses and Public Health",
+   "category": "elective"
+  },
+  {
+   "id": "LP41012-30",
+   "code": "LP41012",
+   "title": "Animal Behavior & Welfare",
+   "category": "elective"
+  },
+  {
+   "id": "LP41042-31",
+   "code": "LP41042",
+   "title": "Cereal Science & Technology",
+   "category": "elective"
+  },
+  {
+   "id": "LP41093-32",
+   "code": "LP41093",
+   "title": "Laboratory Techniques in Livestock Production",
+   "category": "elective"
+  },
+  {
+   "id": "LP41113-33",
+   "code": "LP41113",
+   "title": "Processing & Utilization of Animal Byproducts",
+   "category": "elective"
+  }
+ ],
+ "responses": [
+  {
+   "year": "2005",
+   "finalResult": "Second Class Upper",
+   "sector": [
+    "Government"
+   ],
+   "roleNow": "Senior Lecturer",
+   "rolePrev": "Temporary Lecturer",
+   "company": "Sabaragamuwa university of Sri Lanka",
+   "empDuration": "1 year or more",
+   "waitingPeriod": "1 to 6 months",
+   "jobRelatedness": "Directly related",
+   "fieldExpertise": [
+    "Other"
+   ],
+   "postgrad": "Yes",
+   "qualification": "Other",
+   "careerPrep": 4.0,
+   "courses": {
+    "LP11013-0": 4.0,
+    "LP11022-1": 4.0,
+    "LP11032-2": 5.0,
+    "LP12012-3": 4.0,
+    "LP12023-4": 3.0,
+    "LP21012-5": 3.0,
+    "LP21022-6": 3.0,
+    "LP21032-7": 3.0,
+    "LP22012-8": 2.0,
+    "LP21022-9": 3.0,
+    "LP21032-10": 2.0,
+    "LP31032-11": 3.0,
+    "LP31063-12": 3.0,
+    "LP31083-13": 5.0,
+    "LP31093-14": 5.0,
+    "LP31103-15": 5.0,
+    "LP31113-16": 5.0,
+    "LP32032-17": 5.0,
+    "LP32082-18": 5.0,
+    "LP32103-19": 5.0,
+    "LP32113-20": 5.0,
+    "LP32123-21": 5.0,
+    "LP41072-22": 5.0,
+    "LP41103-23": 5.0,
+    "LP41122-24": 4.0,
+    "LP42012-25": 5.0,
+    "LP42026-26": 5.0,
+    "LP32012-27": 4.0,
+    "LP32042-28": 4.0,
+    "LP32092-29": 3.0,
+    "LP41012-30": 3.0,
+    "LP41042-31": 3.0,
+    "LP41093-32": 3.0,
+    "LP41113-33": 3.0
+   },
+   "usefulCourses": [],
+   "outdated": "No",
+   "activities": {
+    "Laboratory experiments": "Sufficient",
+    "Product development": "Sufficient",
+    "Industry visits": "Sufficient",
+    "Workshops": "Sufficient",
+    "Case studies": "Sufficient",
+    "Field-based learning": "Sufficient"
+   },
+   "trainingDuration": "Adequate",
+   "evalEffective": "Partly",
+   "strengthen": [
+    "Fieldwork"
+   ],
+   "teaching": {
+    "Lectures": 4.0,
+    "Case studies": 4.0,
+    "Practical sessions": 4.0,
+    "Industry visits": 4.0,
+    "Group projects": 4.0,
+    "Online learning": 3.0,
+    "Problem-based learning": 2.0
+   },
+   "assessment": {
+    "Written exams": 3.0,
+    "Assignments": 2.0,
+    "Presentations": 4.0,
+    "Industry-based projects": 4.0,
+    "Online quizzes": 4.0,
+    "Viva": 3.0
+   },
+   "ilo": 3.0,
+   "assessAligned": 2.0,
+   "examFlex": 3.0,
+   "expectationsMet": "Yes",
+   "facedChallenges": "Other",
+   "flexibility": "Other",
+   "recommend": "Other",
+   "comparedSimilar": "More comprehensive",
+   "strengths": [
+    "Innovation focus"
+   ],
+   "improve": [
+    "Lack of digital skills"
+   ],
+   "overallExp": 3.0,
+   "jobSkills": 3.0,
+   "text": {
+    "12": "Diploma in Student Counselling.",
+    "30": "Yes."
+   }
+  },
+  {
+   "year": "2025",
+   "finalResult": "Second Class Lower",
+   "sector": [
+    "Private"
+   ],
+   "roleNow": "Biologist",
+   "rolePrev": "Junior biologist",
+   "company": "Haritha Fish Farm",
+   "empDuration": "Over 6 months",
+   "waitingPeriod": "Less than 1 month",
+   "jobRelatedness": "Directly related",
+   "fieldExpertise": [
+    "Farming/Production"
+   ],
+   "postgrad": "Planning to start",
+   "qualification": "BSc",
+   "careerPrep": 5.0,
+   "courses": {
+    "LP11013-0": 5.0,
+    "LP11022-1": 5.0,
+    "LP11032-2": 5.0,
+    "LP12012-3": 3.0,
+    "LP12023-4": 5.0,
+    "LP21012-5": 5.0,
+    "LP21022-6": 5.0,
+    "LP21032-7": 3.0,
+    "LP22012-8": 5.0,
+    "LP21022-9": 5.0,
+    "LP21032-10": 4.0,
+    "LP31032-11": 4.0,
+    "LP31063-12": 4.0,
+    "LP31083-13": 5.0,
+    "LP31093-14": 5.0,
+    "LP31103-15": 5.0,
+    "LP31113-16": 5.0,
+    "LP32032-17": 5.0,
+    "LP32082-18": 5.0,
+    "LP32103-19": 5.0,
+    "LP32113-20": 5.0,
+    "LP32123-21": 5.0,
+    "LP41072-22": 5.0,
+    "LP41103-23": 5.0,
+    "LP41122-24": 5.0,
+    "LP42012-25": 5.0,
+    "LP42026-26": 5.0,
+    "LP32012-27": 4.0,
+    "LP32042-28": 5.0,
+    "LP32092-29": 4.0,
+    "LP41012-30": 5.0,
+    "LP41042-31": 3.0,
+    "LP41093-32": 5.0,
+    "LP41113-33": 5.0
+   },
+   "usefulCourses": [
+    "Animal Behavior & Welfare",
+    "Fish Breeding and Larviculture",
+    "Laboratory Techniques in Livestock Production",
+    "Ornamental Fish Culture",
+    "Recent Advances in Biotechnology and Molecular Biology in Aquaculture"
+   ],
+   "outdated": "No",
+   "activities": {
+    "Laboratory experiments": "Sufficient",
+    "Product development": "Sufficient",
+    "Industry visits": "Sufficient",
+    "Workshops": "Somewhat",
+    "Case studies": "Somewhat",
+    "Field-based learning": "Sufficient"
+   },
+   "trainingDuration": "Too short",
+   "evalEffective": "Yes",
+   "strengthen": [
+    "Fieldwork",
+    "Industry-based projects",
+    "Oral exams"
+   ],
+   "teaching": {
+    "Lectures": 5.0,
+    "Case studies": 4.0,
+    "Practical sessions": 5.0,
+    "Industry visits": 5.0,
+    "Group projects": 4.0,
+    "Online learning": 4.0,
+    "Problem-based learning": 4.0
+   },
+   "assessment": {
+    "Written exams": 5.0,
+    "Assignments": 5.0,
+    "Presentations": 5.0,
+    "Industry-based projects": 5.0,
+    "Online quizzes": 5.0,
+    "Viva": 5.0
+   },
+   "ilo": 5.0,
+   "assessAligned": 5.0,
+   "examFlex": 5.0,
+   "expectationsMet": "Yes",
+   "facedChallenges": "No",
+   "flexibility": "Yes",
+   "recommend": "Yes",
+   "comparedSimilar": "More comprehensive",
+   "strengths": [
+    "Industry relevance",
+    "Entrepreneurship",
+    "Real-world exposure",
+    "Networking links"
+   ],
+   "improve": [
+    "Few international opportunities",
+    "Less focus on sustainability"
+   ],
+   "overallExp": 5.0,
+   "jobSkills": 5.0,
+   "text": {
+    "12": "1.5 year experience in working at Haritha Fish Farm as Biologist.",
+    "14i": "This course is filled with a lot of content, and the curriculum is effective.",
+    "14ii": "I think increasing the practical sessions would be more useful.",
+    "15": "Ornamental fish culture. Fish breeding and larviculture. Recent Advances in Biotechnology and Molecular Biology in Aquaculture. Laboratory Techniques in Livestock Production. Animal behaviour and welfare.",
+    "17": "I think subjects on marine fish biology and production are essential for the curriculum.",
+    "22": "Three months is not enough time to do good research. We had to rush it, so we could not obtain better results.",
+    "24": "I think the online learning method has more disadvantages. Students cannot attend lectures in person, and signal problems cause a lot of difficulty.",
+    "29": "There should be a gap of at least one day between exams.",
+    "30": "Yes. I think this degree programme is the best among Sri Lankan universities, because we had more practical experience of the subjects.",
+    "31": "All the lecturers fully supported our academic path.",
+    "32": "The workload is not heavy for us.",
+    "33": "No. Farm practice was somewhat challenging in the first sessions, but it was also a good opportunity for us.",
+    "34": "Yes. The management is friendly and very supportive.",
+    "35": "Our degree programme has excellent professionals in various fields, and the practical exposure is very helpful in our careers.",
+    "36": "I have not seen any weakness.",
+    "37": "Yes, because the quality is high in every way.",
+    "43": "I think this degree programme should be offered to many more generations of students, both the aquatic and the animal bio-resource modules."
+   }
+  },
+  {
+   "year": "2025",
+   "finalResult": "Second Class Upper",
+   "sector": [
+    "Private"
+   ],
+   "roleNow": "Production and stores Executive",
+   "rolePrev": "Stores Assistent",
+   "company": "FLi Agro pvt ltd",
+   "empDuration": "1 year or more",
+   "waitingPeriod": "Less than 1 month",
+   "jobRelatedness": "Directly related",
+   "fieldExpertise": [
+    "Food Processing/Manufacturing"
+   ],
+   "postgrad": "Not yet",
+   "qualification": "BSc",
+   "careerPrep": 5.0,
+   "courses": {
+    "LP11013-0": 3.0,
+    "LP11022-1": 4.0,
+    "LP11032-2": 2.0,
+    "LP12012-3": 5.0,
+    "LP12023-4": 5.0,
+    "LP21012-5": 2.0,
+    "LP21022-6": 2.0,
+    "LP21032-7": 4.0,
+    "LP22012-8": 4.0,
+    "LP21022-9": 3.0,
+    "LP21032-10": 3.0,
+    "LP31032-11": 5.0,
+    "LP31063-12": 5.0,
+    "LP31083-13": 3.0,
+    "LP31093-14": 3.0,
+    "LP31103-15": 3.0,
+    "LP31113-16": 4.0,
+    "LP32032-17": 3.0,
+    "LP32082-18": 5.0,
+    "LP32103-19": 5.0,
+    "LP32113-20": 5.0,
+    "LP32123-21": 3.0,
+    "LP41072-22": 3.0,
+    "LP41103-23": 3.0,
+    "LP41122-24": 5.0,
+    "LP42012-25": 5.0,
+    "LP42026-26": 5.0,
+    "LP32012-27": 3.0,
+    "LP32042-28": 3.0,
+    "LP32092-29": 2.0,
+    "LP41012-30": 3.0,
+    "LP41042-31": 5.0,
+    "LP41093-32": 5.0,
+    "LP41113-33": 5.0
+   },
+   "usefulCourses": [
+    "Food Microbiology",
+    "Fundamentals of Biochemistry",
+    "Principles of Food Science & Technology",
+    "Quality Management of Food Processing and Handling"
+   ],
+   "outdated": "No",
+   "activities": {
+    "Laboratory experiments": "Sufficient",
+    "Product development": "Somewhat",
+    "Industry visits": "Sufficient",
+    "Workshops": "Somewhat",
+    "Case studies": "Sufficient",
+    "Field-based learning": "Somewhat"
+   },
+   "trainingDuration": "Adequate",
+   "evalEffective": "Yes",
+   "strengthen": [
+    "Practical/lab evaluations",
+    "Industry-based projects"
+   ],
+   "teaching": {
+    "Lectures": 5.0,
+    "Case studies": 5.0,
+    "Practical sessions": 5.0,
+    "Industry visits": 4.0,
+    "Group projects": 5.0,
+    "Online learning": 5.0,
+    "Problem-based learning": 5.0
+   },
+   "assessment": {
+    "Written exams": 5.0,
+    "Assignments": 4.0,
+    "Presentations": 4.0,
+    "Industry-based projects": 5.0,
+    "Online quizzes": 5.0,
+    "Viva": 4.0
+   },
+   "ilo": 5.0,
+   "assessAligned": 4.0,
+   "examFlex": 3.0,
+   "expectationsMet": "Yes",
+   "facedChallenges": "No",
+   "flexibility": "Yes",
+   "recommend": "Yes",
+   "comparedSimilar": "Similar",
+   "strengths": [
+    "Entrepreneurship",
+    "Real-world exposure"
+   ],
+   "improve": [
+    "Limited industry exposure",
+    "Few international opportunities"
+   ],
+   "overallExp": 4.0,
+   "jobSkills": 4.0,
+   "text": {
+    "12": "Slic Lanka fisheries - 6 month training as production assistant.",
+    "15": "Quality control, Biochemistry, Food science, Food microbiology.",
+    "17": "Quality control, including quality certification.",
+    "22": "Increase the training period.",
+    "29": "A more flexible examination schedule.",
+    "30": "Yes.",
+    "31": "Good.",
+    "32": "Enough.",
+    "34": "Good.",
+    "35": "It helps you survive in industry.",
+    "36": "Industry exposure was not enough.",
+    "37": "Yes.",
+    "43": "Enhance industrial exposure."
+   }
+  },
+  {
+   "year": "2022",
+   "finalResult": "Second Class Lower",
+   "sector": [
+    "Private"
+   ],
+   "roleNow": "RESEARCH AND DEVELOPMENT MANAGER",
+   "rolePrev": "OPERATION AND R&D EXECUTIVE",
+   "company": "VICTORIA MARKETING (PVT) LTD",
+   "empDuration": "1 year or more",
+   "waitingPeriod": "Less than 1 month",
+   "jobRelatedness": "Directly related",
+   "fieldExpertise": [
+    "Food Processing/Manufacturing"
+   ],
+   "postgrad": "Planning to start",
+   "qualification": "BSc",
+   "careerPrep": 5.0,
+   "courses": {
+    "LP11013-0": 5.0,
+    "LP11022-1": 5.0,
+    "LP11032-2": 4.0,
+    "LP12012-3": 5.0,
+    "LP12023-4": 5.0,
+    "LP21012-5": 4.0,
+    "LP21022-6": 4.0,
+    "LP21032-7": 4.0,
+    "LP22012-8": 4.0,
+    "LP21022-9": 5.0,
+    "LP21032-10": 4.0,
+    "LP31032-11": 5.0,
+    "LP31063-12": 5.0,
+    "LP31083-13": 4.0,
+    "LP31093-14": 4.0,
+    "LP31103-15": 4.0,
+    "LP31113-16": 4.0,
+    "LP32032-17": 4.0,
+    "LP32082-18": 5.0,
+    "LP32103-19": 4.0,
+    "LP32113-20": 4.0,
+    "LP32123-21": 4.0,
+    "LP41072-22": 4.0,
+    "LP41103-23": 4.0,
+    "LP41122-24": 5.0,
+    "LP42012-25": 5.0,
+    "LP42026-26": 5.0,
+    "LP32012-27": 4.0,
+    "LP32042-28": 4.0,
+    "LP32092-29": 4.0,
+    "LP41012-30": 4.0,
+    "LP41042-31": 5.0,
+    "LP41093-32": 5.0,
+    "LP41113-33": 4.0
+   },
+   "usefulCourses": [
+    "Food Microbiology",
+    "Proposal Formulation & Scientific Writing",
+    "Quality Management of Food Processing and Handling",
+    "Risk Assessment and Food Safety Management in Fishery Product"
+   ],
+   "outdated": "No",
+   "activities": {
+    "Laboratory experiments": "Sufficient",
+    "Product development": "Sufficient",
+    "Industry visits": "Sufficient",
+    "Workshops": "Sufficient",
+    "Case studies": "Sufficient",
+    "Field-based learning": "Sufficient"
+   },
+   "trainingDuration": "Adequate",
+   "evalEffective": "Yes",
+   "strengthen": [
+    "Continuous assessments",
+    "Practical/lab evaluations",
+    "Fieldwork",
+    "Industry-based projects",
+    "Oral exams"
+   ],
+   "teaching": {
+    "Lectures": 5.0,
+    "Case studies": 4.0,
+    "Practical sessions": 4.0,
+    "Industry visits": 4.0,
+    "Group projects": 4.0,
+    "Online learning": 4.0,
+    "Problem-based learning": 4.0
+   },
+   "assessment": {
+    "Written exams": 5.0,
+    "Assignments": 5.0,
+    "Presentations": 5.0,
+    "Industry-based projects": 5.0,
+    "Online quizzes": 4.0,
+    "Viva": 5.0
+   },
+   "ilo": 5.0,
+   "assessAligned": 5.0,
+   "examFlex": 5.0,
+   "expectationsMet": "No",
+   "facedChallenges": "No",
+   "flexibility": "No",
+   "recommend": "Yes",
+   "comparedSimilar": "More comprehensive",
+   "strengths": [
+    "Industry relevance",
+    "Innovation focus"
+   ],
+   "improve": [
+    "Limited industry exposure"
+   ],
+   "overallExp": 5.0,
+   "jobSkills": 5.0,
+   "text": {
+    "12": "Bsc degree.",
+    "14i": "Please add Meat Science as a compulsory subject in the aquatic module.",
+    "15": "Propsal formulation, food microbiology, food safety management in fishery product, quality management and processing and handling.",
+    "17": "Meat Science and Technology.",
+    "22": "Good.",
+    "31": "Good.",
+    "32": "OK.",
+    "35": "Farm practice.",
+    "37": "Yes.",
+    "43": "I am satisfied with the degree."
+   }
+  },
+  {
+   "year": "2024",
+   "finalResult": "Second Class Upper",
+   "sector": [
+    "Self employed"
+   ],
+   "roleNow": "Entrepreneur",
+   "rolePrev": "Temporary Assistant Lecturer",
+   "company": "Own business",
+   "empDuration": "1 year or more",
+   "waitingPeriod": "1 to 6 months",
+   "jobRelatedness": "Directly related",
+   "fieldExpertise": [
+    "Other"
+   ],
+   "postgrad": "Yes",
+   "qualification": "BSc",
+   "careerPrep": 4.0,
+   "courses": {
+    "LP11013-0": 4.0,
+    "LP11022-1": 5.0,
+    "LP11032-2": 5.0,
+    "LP12012-3": 4.0,
+    "LP12023-4": 4.0,
+    "LP21012-5": 4.0,
+    "LP21022-6": 4.0,
+    "LP21032-7": 4.0,
+    "LP22012-8": 4.0,
+    "LP21022-9": 5.0,
+    "LP21032-10": 4.0,
+    "LP31032-11": 5.0,
+    "LP31063-12": 5.0,
+    "LP31083-13": 5.0,
+    "LP31093-14": 5.0,
+    "LP31103-15": 5.0,
+    "LP31113-16": 5.0,
+    "LP32032-17": 5.0,
+    "LP32082-18": 5.0,
+    "LP32103-19": 5.0,
+    "LP32113-20": 5.0,
+    "LP32123-21": 5.0,
+    "LP41072-22": 5.0,
+    "LP41103-23": 5.0,
+    "LP41122-24": 5.0,
+    "LP42012-25": 5.0,
+    "LP42026-26": 5.0,
+    "LP32012-27": 4.0,
+    "LP32042-28": 4.0,
+    "LP32092-29": 4.0,
+    "LP41012-30": 4.0,
+    "LP41042-31": 3.0,
+    "LP41093-32": 5.0,
+    "LP41113-33": 5.0
+   },
+   "usefulCourses": [],
+   "outdated": "No",
+   "activities": {
+    "Laboratory experiments": "Somewhat",
+    "Product development": "Somewhat",
+    "Industry visits": "Sufficient",
+    "Workshops": "Sufficient",
+    "Case studies": "Sufficient",
+    "Field-based learning": "Sufficient"
+   },
+   "trainingDuration": "Too short",
+   "evalEffective": "Yes",
+   "strengthen": [
+    "Continuous assessments",
+    "Practical/lab evaluations",
+    "Fieldwork",
+    "Industry-based projects",
+    "Oral exams"
+   ],
+   "teaching": {
+    "Lectures": 5.0,
+    "Case studies": 5.0,
+    "Practical sessions": 5.0,
+    "Industry visits": 5.0,
+    "Group projects": 5.0,
+    "Online learning": 3.0,
+    "Problem-based learning": 5.0
+   },
+   "assessment": {
+    "Written exams": 4.0,
+    "Assignments": 4.0,
+    "Presentations": 5.0,
+    "Industry-based projects": 5.0,
+    "Online quizzes": 3.0,
+    "Viva": 5.0
+   },
+   "ilo": 4.0,
+   "assessAligned": 4.0,
+   "examFlex": 4.0,
+   "expectationsMet": "Yes",
+   "facedChallenges": "No",
+   "flexibility": "Yes",
+   "recommend": "Yes",
+   "comparedSimilar": "More comprehensive",
+   "strengths": [
+    "Industry relevance",
+    "Innovation focus",
+    "Entrepreneurship",
+    "Real-world exposure",
+    "Networking links"
+   ],
+   "improve": [
+    "Few international opportunities"
+   ],
+   "overallExp": 4.0,
+   "jobSkills": 5.0,
+   "text": {
+    "14i": "Need more aquatic subjects.",
+    "14ii": "Some subjects related to marine aquaculture and fisheries are needed.",
+    "15": "All the subjects.",
+    "17": "Marine aquaculture and fisheries.",
+    "22": "The period needs to be more than 15 weeks.",
+    "29": "Good assessment.",
+    "30": "Yes.",
+    "31": "Very good.",
+    "32": "Manageable.",
+    "34": "Yes.",
+    "35": "Full of theoretical and practical knowledge.",
+    "36": "The marine sector needs to be covered.",
+    "37": "Yes."
+   }
+  },
+  {
+   "year": "2025",
+   "finalResult": "Second Class Lower",
+   "sector": [
+    "Private"
+   ],
+   "roleNow": "Financial Advisor",
+   "rolePrev": "Academic Executive",
+   "company": "Union Assurance",
+   "empDuration": "Over 6 months",
+   "waitingPeriod": "Less than 1 month",
+   "jobRelatedness": "Not related",
+   "fieldExpertise": [
+    "Other"
+   ],
+   "postgrad": "Not yet",
+   "qualification": "BSc",
+   "careerPrep": 5.0,
+   "courses": {
+    "LP11013-0": 5.0,
+    "LP11022-1": 5.0,
+    "LP11032-2": 5.0,
+    "LP12012-3": 5.0,
+    "LP12023-4": 5.0,
+    "LP21012-5": 5.0,
+    "LP21022-6": 5.0,
+    "LP21032-7": 5.0,
+    "LP22012-8": 5.0,
+    "LP21022-9": 5.0,
+    "LP21032-10": 5.0,
+    "LP31032-11": 5.0,
+    "LP31063-12": 5.0,
+    "LP31083-13": 5.0,
+    "LP31093-14": 5.0,
+    "LP31103-15": 5.0,
+    "LP31113-16": 5.0,
+    "LP32032-17": 5.0,
+    "LP32082-18": 5.0,
+    "LP32103-19": 5.0,
+    "LP32113-20": 5.0,
+    "LP32123-21": 5.0,
+    "LP41072-22": 5.0,
+    "LP41103-23": 5.0,
+    "LP41122-24": 5.0,
+    "LP42012-25": 5.0,
+    "LP42026-26": 5.0,
+    "LP32012-27": 5.0,
+    "LP32042-28": 5.0,
+    "LP32092-29": 5.0,
+    "LP41012-30": 1.0,
+    "LP41042-31": 5.0,
+    "LP41093-32": 5.0,
+    "LP41113-33": 1.0
+   },
+   "usefulCourses": [],
+   "outdated": "No",
+   "activities": {
+    "Laboratory experiments": "Sufficient",
+    "Product development": "Sufficient",
+    "Industry visits": "Sufficient",
+    "Workshops": "Sufficient",
+    "Case studies": "Sufficient",
+    "Field-based learning": "Sufficient"
+   },
+   "trainingDuration": "Adequate",
+   "evalEffective": "Yes",
+   "strengthen": [
+    "Practical/lab evaluations",
+    "Fieldwork",
+    "Industry-based projects"
+   ],
+   "teaching": {
+    "Lectures": 5.0,
+    "Case studies": 4.0,
+    "Practical sessions": 4.0,
+    "Industry visits": 3.0,
+    "Group projects": 3.0,
+    "Online learning": 3.0,
+    "Problem-based learning": 5.0
+   },
+   "assessment": {
+    "Written exams": 5.0,
+    "Assignments": 5.0,
+    "Presentations": 5.0,
+    "Industry-based projects": 3.0,
+    "Online quizzes": 3.0,
+    "Viva": 5.0
+   },
+   "ilo": 5.0,
+   "assessAligned": 5.0,
+   "examFlex": 5.0,
+   "expectationsMet": "Yes",
+   "facedChallenges": "Yes",
+   "flexibility": "Yes",
+   "recommend": "Yes",
+   "comparedSimilar": "More comprehensive",
+   "strengths": [
+    "Industry relevance",
+    "Innovation focus",
+    "Entrepreneurship",
+    "Real-world exposure",
+    "Networking links"
+   ],
+   "improve": [
+    "Lack of digital skills"
+   ],
+   "overallExp": 5.0,
+   "jobSkills": 5.0,
+   "text": {
+    "12": "Executive.",
+    "14i": "I know my career is not related to these subjects, but they helped me become the person I am today.",
+    "14ii": "The same again: everything I learned helped me build myself.",
+    "17": "I love aquascaping, so I believe more activities related to aquascaping would interest students.",
+    "22": "Everything was good; it feels as though it is already perfect.",
+    "30": "Yes.",
+    "31": "Everything was perfect and very helpful.",
+    "32": "It felt fine.",
+    "33": "Yes.",
+    "34": "Yes.",
+    "35": "Guidance.",
+    "37": "Yes. It is a beautiful journey, with ups and downs."
+   }
+  },
+  {
+   "year": "2023",
+   "finalResult": "Second Class Upper",
+   "sector": [
+    "Private"
+   ],
+   "roleNow": "Shrimp Farm Manager",
+   "rolePrev": "Aquatic Feed Factory Manager",
+   "company": "JF Aqua (PVT) Ltd. (Jaya Farm Group)",
+   "empDuration": "1 year or more",
+   "waitingPeriod": "Less than 1 month",
+   "jobRelatedness": "Directly related",
+   "fieldExpertise": [
+    "Farming/Production",
+    "Animal Feed",
+    "Value Addition",
+    "Consultancy",
+    "Marketing"
+   ],
+   "postgrad": "Planning to start",
+   "qualification": "BSc",
+   "careerPrep": 5.0,
+   "courses": {
+    "LP11013-0": 5.0,
+    "LP11022-1": 5.0,
+    "LP11032-2": 5.0,
+    "LP12012-3": 3.0,
+    "LP12023-4": 5.0,
+    "LP21012-5": 5.0,
+    "LP21022-6": 3.0,
+    "LP21032-7": 4.0,
+    "LP22012-8": 5.0,
+    "LP21022-9": 5.0,
+    "LP21032-10": 3.0,
+    "LP31032-11": 3.0,
+    "LP31063-12": 5.0,
+    "LP31083-13": 5.0,
+    "LP31093-14": 5.0,
+    "LP31103-15": 5.0,
+    "LP31113-16": 4.0,
+    "LP32032-17": 5.0,
+    "LP32082-18": 5.0,
+    "LP32103-19": 4.0,
+    "LP32113-20": 5.0,
+    "LP32123-21": 5.0,
+    "LP41072-22": 5.0,
+    "LP41103-23": 5.0,
+    "LP41122-24": 5.0,
+    "LP42012-25": 5.0,
+    "LP42026-26": 5.0,
+    "LP32012-27": 4.0,
+    "LP32042-28": 4.0,
+    "LP32092-29": 5.0,
+    "LP41012-30": 3.0,
+    "LP41042-31": 4.0,
+    "LP41093-32": 5.0,
+    "LP41113-33": 5.0
+   },
+   "usefulCourses": [
+    "Biology of Aquatic Organisms",
+    "Fish Breeding and Larviculture",
+    "Industrial Training",
+    "Laboratory Techniques in Livestock Production",
+    "Technology of Fish Species Production"
+   ],
+   "outdated": "Yes",
+   "activities": {
+    "Laboratory experiments": "Somewhat",
+    "Product development": "Sufficient",
+    "Industry visits": "Somewhat",
+    "Workshops": "Sufficient",
+    "Case studies": "Somewhat",
+    "Field-based learning": "Sufficient"
+   },
+   "trainingDuration": "Too short",
+   "evalEffective": "Partly",
+   "strengthen": [
+    "Practical/lab evaluations",
+    "Fieldwork",
+    "Industry-based projects",
+    "Oral exams"
+   ],
+   "teaching": {
+    "Lectures": 5.0,
+    "Case studies": 4.0,
+    "Practical sessions": 5.0,
+    "Industry visits": 5.0,
+    "Group projects": 5.0,
+    "Online learning": 2.0,
+    "Problem-based learning": 5.0
+   },
+   "assessment": {
+    "Written exams": 4.0,
+    "Assignments": 2.0,
+    "Presentations": 5.0,
+    "Industry-based projects": 5.0,
+    "Online quizzes": 2.0,
+    "Viva": 5.0
+   },
+   "ilo": 4.0,
+   "assessAligned": 5.0,
+   "examFlex": 5.0,
+   "expectationsMet": "Yes",
+   "facedChallenges": "No",
+   "flexibility": "Yes",
+   "recommend": "Yes",
+   "comparedSimilar": "More comprehensive",
+   "strengths": [
+    "Industry relevance",
+    "Innovation focus",
+    "Entrepreneurship",
+    "Real-world exposure",
+    "Networking links"
+   ],
+   "improve": [
+    "Limited industry exposure",
+    "Lack of digital skills",
+    "Few international opportunities",
+    "Less focus on sustainability"
+   ],
+   "overallExp": 5.0,
+   "jobSkills": 5.0,
+   "text": {
+    "12": "Shrimp Broodstock Management, Larval Rearing, Shrimp farming, Aquatic Feed Formulation and Manufacturing.",
+    "14i": "Farm practice should be linked to industry.",
+    "14ii": "These should be updated with the latest technology and linked to industry.",
+    "15": "Technology of Fish Species Production, Fish Breeding and Larviculture, Biology of Aquatic Organisms, Laboratory Techniques in Livestock Production, Industrial Training.",
+    "16b": "Most of the subjects are outdated.",
+    "17": "Breeding techniques, farming techniques, management techniques and problem solving.",
+    "22": "Research should be industry-related. The training period should be more than three months, and the industrial experience should be critically evaluated.",
+    "24": "Problem solving.",
+    "29": "Industry-based assessment, and industrial problem-solving assessment.",
+    "30": "Yes, definitely.",
+    "31": "I'm personally happy with the guidance about the teaching method and practical exposure.",
+    "32": "I think it should be more demanding and more practical.",
+    "34": "Very good.",
+    "35": "The lecture panel, and the relationship with industry.",
+    "36": "The industrial training period is too short, and industry-related practical exposure is very limited.",
+    "37": "Yes, definitely. There are a lot of job opportunities for boys.",
+    "43": "In the end, every graduate should be ready to perform in industry."
+   }
+  },
+  {
+   "year": "2025",
+   "finalResult": "Second Class Lower",
+   "sector": [
+    "Private"
+   ],
+   "roleNow": "Biologist",
+   "rolePrev": "Junior biologist",
+   "company": "Haritha fish farm",
+   "empDuration": "Over 6 months",
+   "waitingPeriod": "Less than 1 month",
+   "jobRelatedness": "Directly related",
+   "fieldExpertise": [
+    "Farming/Production",
+    "Animal Feed"
+   ],
+   "postgrad": "Planning to start",
+   "qualification": "BSc",
+   "careerPrep": 5.0,
+   "courses": {
+    "LP11013-0": 4.0,
+    "LP11022-1": 2.0,
+    "LP11032-2": 5.0,
+    "LP12012-3": 3.0,
+    "LP12023-4": 3.0,
+    "LP21012-5": 4.0,
+    "LP21022-6": 3.0,
+    "LP21032-7": 2.0,
+    "LP22012-8": 3.0,
+    "LP21022-9": 5.0,
+    "LP21032-10": 3.0,
+    "LP31032-11": 4.0,
+    "LP31063-12": 4.0,
+    "LP31083-13": 5.0,
+    "LP31093-14": 5.0,
+    "LP31103-15": 5.0,
+    "LP31113-16": 5.0,
+    "LP32032-17": 5.0,
+    "LP32082-18": 3.0,
+    "LP32103-19": 4.0,
+    "LP32113-20": 5.0,
+    "LP32123-21": 5.0,
+    "LP41072-22": 5.0,
+    "LP41103-23": 5.0,
+    "LP41122-24": 5.0,
+    "LP42012-25": 5.0,
+    "LP42026-26": 5.0,
+    "LP32012-27": 5.0,
+    "LP32042-28": 2.0,
+    "LP32092-29": 5.0,
+    "LP41012-30": 1.0,
+    "LP41042-31": 3.0,
+    "LP41093-32": 5.0,
+    "LP41113-33": 5.0
+   },
+   "usefulCourses": [
+    "Animal Behavior & Welfare",
+    "Fish Breeding and Larviculture",
+    "Laboratory Techniques in Livestock Production",
+    "Ornamental Fish Culture",
+    "Technology of Fish Species Production"
+   ],
+   "outdated": "No",
+   "activities": {
+    "Laboratory experiments": "Sufficient",
+    "Product development": "Somewhat",
+    "Industry visits": "Sufficient",
+    "Workshops": "Somewhat",
+    "Case studies": "Sufficient",
+    "Field-based learning": "Sufficient"
+   },
+   "trainingDuration": "Too short",
+   "evalEffective": "Yes",
+   "strengthen": [
+    "Continuous assessments",
+    "Practical/lab evaluations",
+    "Fieldwork",
+    "Industry-based projects",
+    "Oral exams"
+   ],
+   "teaching": {
+    "Lectures": 5.0,
+    "Case studies": 4.0,
+    "Practical sessions": 5.0,
+    "Industry visits": 5.0,
+    "Group projects": 5.0,
+    "Online learning": 5.0,
+    "Problem-based learning": 5.0
+   },
+   "assessment": {
+    "Written exams": 5.0,
+    "Assignments": 5.0,
+    "Presentations": 5.0,
+    "Industry-based projects": 5.0,
+    "Online quizzes": 5.0,
+    "Viva": 5.0
+   },
+   "ilo": 5.0,
+   "assessAligned": 5.0,
+   "examFlex": 5.0,
+   "expectationsMet": "Yes",
+   "facedChallenges": "Other",
+   "flexibility": "Yes",
+   "recommend": "Yes",
+   "comparedSimilar": "More comprehensive",
+   "strengths": [
+    "Industry relevance",
+    "Innovation focus",
+    "Entrepreneurship",
+    "Real-world exposure"
+   ],
+   "improve": [
+    "Lack of digital skills",
+    "Few international opportunities",
+    "Less focus on sustainability"
+   ],
+   "overallExp": 5.0,
+   "jobSkills": 5.0,
+   "text": {
+    "12": "One and half year working experience in working at Haritha fish farm.",
+    "14i": "Some subjects are relevant to both academic and professional pathways, but the subjects above are important.",
+    "14ii": "These subjects are essential for the course, and important for gaining practical and theoretical knowledge.",
+    "15": "Ornamental fish culture. Fish Breeding and Larviculture. Animal behaviour and welfare. Laboratory Techniques in Livestock Production. Technology of Fish Species Production.",
+    "16b": "No, all the subjects are essential.",
+    "17": "I think a subject on marine fish biology and production must be added.",
+    "22": "The final-year research and training period is not long enough to conduct good research.",
+    "24": "Practical learning methods must be increased.",
+    "29": "There should be at least a one-day gap between two subjects in the exam timetable.",
+    "30": "Yes.",
+    "31": "All things are good.",
+    "32": "This is not too much. It is essential to get better outcomes.",
+    "33": "During online learning, signal problems were the main issue.",
+    "34": "Yes.",
+    "35": "Our farm is very important for completing the degree.",
+    "36": "Reduce the duration of the online study period.",
+    "37": "Yes, of course, because I think this course is the best among other universities.",
+    "43": "This is the best course. It helped me achieve my goals."
+   }
+  },
+  {
+   "year": "2025",
+   "finalResult": "Second Class Upper",
+   "sector": [
+    "Government"
+   ],
+   "roleNow": "Stores and Production Assi",
+   "rolePrev": "Stores",
+   "company": "Fli Agro pvt ltd",
+   "empDuration": "1 year or more",
+   "waitingPeriod": "Less than 1 month",
+   "jobRelatedness": "Somewhat related",
+   "fieldExpertise": [
+    "Food Processing/Manufacturing"
+   ],
+   "postgrad": "Not yet",
+   "qualification": "BSc",
+   "careerPrep": 4.0,
+   "courses": {
+    "LP11013-0": 4.0,
+    "LP11022-1": 4.0,
+    "LP11032-2": 4.0,
+    "LP12012-3": 2.0,
+    "LP12023-4": 4.0,
+    "LP21012-5": 4.0,
+    "LP21022-6": 4.0,
+    "LP21032-7": 3.0,
+    "LP22012-8": 4.0,
+    "LP21022-9": 4.0,
+    "LP21032-10": 4.0,
+    "LP31032-11": 5.0,
+    "LP31063-12": 5.0,
+    "LP31083-13": 4.0,
+    "LP31093-14": 4.0,
+    "LP31103-15": 4.0,
+    "LP31113-16": 4.0,
+    "LP32032-17": 4.0,
+    "LP32082-18": 4.0,
+    "LP32103-19": 4.0,
+    "LP32113-20": 4.0,
+    "LP32123-21": 4.0,
+    "LP41072-22": 4.0,
+    "LP41103-23": 4.0,
+    "LP41122-24": 4.0,
+    "LP42012-25": 4.0,
+    "LP42026-26": 4.0,
+    "LP32012-27": 4.0,
+    "LP32042-28": 4.0,
+    "LP32092-29": 4.0,
+    "LP41012-30": 4.0,
+    "LP41042-31": 4.0,
+    "LP41093-32": 4.0,
+    "LP41113-33": 4.0
+   },
+   "usefulCourses": [
+    "Food Microbiology",
+    "Principles of Food Science & Technology",
+    "Quality Management of Food Processing and Handling"
+   ],
+   "outdated": "No",
+   "activities": {
+    "Laboratory experiments": "Somewhat",
+    "Product development": "Somewhat",
+    "Industry visits": "Somewhat",
+    "Workshops": "Somewhat",
+    "Case studies": "Somewhat",
+    "Field-based learning": "Somewhat"
+   },
+   "trainingDuration": "Too short",
+   "evalEffective": "Yes",
+   "strengthen": [
+    "Practical/lab evaluations",
+    "Fieldwork",
+    "Industry-based projects"
+   ],
+   "teaching": {
+    "Lectures": 4.0,
+    "Case studies": 4.0,
+    "Practical sessions": 4.0,
+    "Industry visits": 4.0,
+    "Group projects": 4.0,
+    "Online learning": 4.0,
+    "Problem-based learning": 4.0
+   },
+   "assessment": {
+    "Written exams": 4.0,
+    "Assignments": 4.0,
+    "Presentations": 4.0,
+    "Industry-based projects": 4.0,
+    "Online quizzes": 4.0,
+    "Viva": 4.0
+   },
+   "ilo": 4.0,
+   "assessAligned": 4.0,
+   "examFlex": 4.0,
+   "expectationsMet": "Yes",
+   "facedChallenges": "No",
+   "flexibility": "No",
+   "recommend": "Yes",
+   "comparedSimilar": "Similar",
+   "strengths": [
+    "Innovation focus",
+    "Real-world exposure"
+   ],
+   "improve": [
+    "Limited industry exposure",
+    "Lack of digital skills",
+    "Less focus on sustainability"
+   ],
+   "overallExp": 4.0,
+   "jobSkills": 3.0,
+   "text": {
+    "12": "6 month experience - Slic lanka.",
+    "15": "Quality, food science, microbiology.",
+    "17": "Quality.",
+    "30": "Yes.",
+    "31": "Good.",
+    "32": "Enough.",
+    "35": "It includes very important lab practice.",
+    "36": "Industrial exposure is not enough.",
+    "37": "Yes."
+   }
+  }
+ ]
+}

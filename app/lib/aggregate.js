@@ -1,4 +1,4 @@
-// Pure aggregation over the raw (Animal Bio-Resource-only) response records,
+// Pure aggregation over one module's raw response records,
 // re-run in the browser whenever the year filter changes.
 
 function avg(nums) {

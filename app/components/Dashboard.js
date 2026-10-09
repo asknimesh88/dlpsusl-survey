@@ -40,8 +40,12 @@ const Panel = ({ title, children }) => (
   </div>
 );
 
-export default function Dashboard({ records, courseColumns }) {
+export default function Dashboard({ modules }) {
+  const [moduleId, setModuleId] = useState(modules[0].id);
   const [year, setYear] = useState("All");
+
+  const active = modules.find((m) => m.id === moduleId) ?? modules[0];
+  const { records, courseColumns } = active;
 
   const allYears = useMemo(() => yearsOf(records), [records]);
   const filtered = useMemo(() => filterByYear(records, year), [records, year]);
@@ -49,16 +53,35 @@ export default function Dashboard({ records, courseColumns }) {
 
   const tooShort = d.trainingDuration.find((t) => t.label === "Too short")?.value ?? 0;
 
+  // Cohorts differ between specialisations, so a stale year filter would empty the page
+  function pickModule(id) {
+    setModuleId(id);
+    setYear("All");
+  }
+
   return (
     <>
       <header className="hero-band">
         <div className="wrap">
           <p className="hero-kicker">Graduate satisfaction survey, Sabaragamuwa University of Sri Lanka</p>
-          <h1>Animal Bio-Resource Technology &amp; Management</h1>
-          <p className="hero-lede">
-            What {records.length} graduates from 2022 to 2026 say about the degree that trained them.
-            Aquatic Bio-Resource responses are left out, so this is feedback on the track the committee owns.
-          </p>
+          <nav className="module-tabs" role="tablist" aria-label="Specialisation">
+            {modules.map((m) => (
+              <button
+                key={m.id}
+                role="tab"
+                aria-selected={m.id === moduleId}
+                className="module-tab"
+                data-active={m.id === moduleId}
+                onClick={() => pickModule(m.id)}
+              >
+                <span className="module-tab-name">{m.label}</span>
+                <span className="module-tab-count">{m.records.length} responses</span>
+              </button>
+            ))}
+          </nav>
+          <h1>{active.full}</h1>
+          <p className="hero-lede">{active.lede}</p>
+          {active.note && <p className="hero-note">{active.note}</p>}
           <div className="hero-stats">
             <div>
               <div className="hero-big">
@@ -266,9 +289,9 @@ export default function Dashboard({ records, courseColumns }) {
         </Section>
 
         <footer className="footer">
-          Graduate Satisfaction Survey on the Curriculum &mdash; Animal Bio-Resource
-          Technology and Management. {records.length} responses analysed; Aquatic
-          Bio-Resource Management responses excluded from this view.
+          Graduate Satisfaction Survey on the Curriculum &mdash; {active.full}.{" "}
+          {records.length} responses analysed. Each specialisation is reported on its own
+          tab; the two are never pooled.
         </footer>
       </div>
     </>
