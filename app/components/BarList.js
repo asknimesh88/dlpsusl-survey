@@ -50,15 +50,32 @@ export default function BarList({ items, total, color, max, unit = "" }) {
           <div className="bar-row-full" key={item.label}>
             <div className="bar-row-label">
               <span className="bar-row-name">{item.label}</span>
+              {/* A count and a percentage sitting side by side can be read as one
+                  decimal number, so the percentage leads and the count follows it
+                  in brackets, naming the group it is a share of. */}
               <span className="bar-row-count">
-                {item.value}
-                {unit}
-                {pct !== null ? ` · ${pct}%` : ""}
+                {pct !== null ? (
+                  <>
+                    <b className="bar-row-pct">{pct}%</b>
+                    <span className="bar-row-of">
+                      ({item.value} of {total})
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    {item.value}
+                    {unit}
+                  </>
+                )}
               </span>
             </div>
             <div
               className="bar-track"
-              title={pct !== null ? `${item.label}: ${item.value} (${pct}%)` : `${item.label}: ${item.value}`}
+              title={
+                pct !== null
+                  ? `${item.label}: ${pct}% (${item.value} of ${total})`
+                  : `${item.label}: ${item.value}`
+              }
             >
               <div
                 className="bar-fill"

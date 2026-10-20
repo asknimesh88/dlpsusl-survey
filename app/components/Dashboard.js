@@ -125,9 +125,10 @@ export default function Dashboard({ modules }) {
 
       <div className="wrap">
         <p className="reading-note">
-          In every bar the first number is how many graduates gave that answer, and the
-          percentage is their share of the {d.n} in view. Questions that allowed more than
-          one answer are marked, and their shares add to more than 100%.
+          Each bar is labelled with a percentage, followed in brackets by the number of
+          graduates it stands for: <b>81% (30 of 37)</b> means 30 graduates out of the 37
+          in view. Questions that allowed more than one answer are marked, and their
+          shares add to more than 100%.
         </p>
 
         <Section title="Who answered" note="Questions 1 to 4, 10 and 11: graduation year, degree class, sector and further study">
