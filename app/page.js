@@ -17,7 +17,7 @@ const MODULES = [
     full: "Aquatic Bio-Resource Technology & Management",
     file: "responses-aquatic.json",
     note:
-      "Only nine graduates answered, so a single person shifts any percentage by about 11 points. " +
+      "Only eight graduates answered, so a single person shifts any percentage by about 12 points. " +
       "Read the figures as indicative and the written answers as the firmer signal.",
   },
 ];

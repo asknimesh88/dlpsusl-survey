@@ -11,6 +11,13 @@ import pandas as pd, re, json, os, sys
 from clean import clean as _clean
 from overrides import POST
 
+# Pilot submissions filed while the form was being set up: staff accounts whose
+# free-text answers are all placeholders ("Xxx", "Mo"). Keyed on the form's own
+# timestamp so a rebuild cannot quietly let them back in.
+EXCLUDE_TIMESTAMPS = {
+    "2026/07/03 6:31:39 AM GMT+5:30",  # aquatic: Senior Lecturer, year given as 2005
+}
+
 PLACEHOLDER = {'', '-', '.', '*', 'nan', 'xx', 'xxx', 'xxxx', 'xxxxx', 'mo', 'x'}
 
 def txt(v):
@@ -104,6 +111,7 @@ def course_title(header):
 def build(path, readable=True):
     df = pd.read_csv(path)
     C = list(df.columns)
+    df = df[~df[C[0]].astype(str).isin(EXCLUDE_TIMESTAMPS)]
     at = lambda p: next(i for i, c in enumerate(C) if c.startswith(p))
     i14a, i14b, b = at('14(i).'), at('14(ii)'), at('15.')
     blocks = [('core', C[16:i14a]), ('compulsory', C[i14a+1:i14b]), ('elective', C[i14b+1:b])]

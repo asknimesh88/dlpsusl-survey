@@ -124,6 +124,12 @@ export default function Dashboard({ modules }) {
       </div>
 
       <div className="wrap">
+        <p className="reading-note">
+          In every bar the first number is how many graduates gave that answer, and the
+          percentage is their share of the {d.n} in view. Questions that allowed more than
+          one answer are marked, and their shares add to more than 100%.
+        </p>
+
         <Section title="Who answered" note="Questions 1 to 4, 10 and 11: graduation year, degree class, sector and further study">
           <div className="grid-2">
             <Panel title="Graduation year">
@@ -248,6 +254,7 @@ export default function Dashboard({ modules }) {
           <div className="grid-2" style={{ marginTop: 32 }}>
             <Panel title="Which assessment methods should be strengthened?">
               <BarList items={d.strengthen} total={d.n} color="var(--series-2)" />
+              <p className="sub-note">More than one answer allowed, so the shares add to more than 100%.</p>
             </Panel>
             <Panel title="Faced strict or challenging situations">
               <BarList items={d.facedChallenges} total={d.n} color="var(--series-8)" />
@@ -263,9 +270,11 @@ export default function Dashboard({ modules }) {
           <div className="grid-2">
             <Panel title="Key strengths">
               <BarList items={d.strengths} total={d.n} color="var(--series-6)" />
+              <p className="sub-note">More than one answer allowed, so the shares add to more than 100%.</p>
             </Panel>
             <Panel title="Areas to improve">
               <BarList items={d.improve} total={d.n} color="var(--series-8)" />
+              <p className="sub-note">More than one answer allowed, so the shares add to more than 100%.</p>
             </Panel>
           </div>
         </Section>

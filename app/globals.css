@@ -773,6 +773,13 @@ button {
   white-space: pre-line;
 }
 
+.reading-note {
+  font-size: 14px;
+  color: var(--ink-soft);
+  max-width: 68ch;
+  margin: 28px 0 -12px;
+}
+
 .sub-note {
   font-size: 13px;
   color: var(--ink-muted);
